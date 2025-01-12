@@ -1,6 +1,6 @@
 import { promises as fs } from "fs"
 import path from "path"
-import { Documents } from "@/settings/documents"
+import { Documents, LocalizedPaths } from "@/settings/documents"
 import grayMatter from "gray-matter"
 import remarkMdx from "remark-mdx"
 import remarkParse from "remark-parse"
@@ -11,14 +11,24 @@ import { visit } from "unist-util-visit"
 
 import { Paths } from "@/lib/pageroutes"
 
+// קבועים
 const docsDir = path.join(process.cwd(), "contents/docs")
 const outputDir = path.join(process.cwd(), "public", "search-data")
 
+// טיפוסים
 interface MdxJsxFlowElement extends Node {
   name: string
   children?: Node[]
 }
 
+interface ProcessedDocument {
+  slug: string
+  title: string
+  description: string
+  content: string
+}
+
+// פונקציות בדיקה (Type Guards)
 function isMdxJsxFlowElement(node: Node): node is MdxJsxFlowElement {
   return node.type === "mdxJsxFlowElement" && "name" in node
 }
@@ -29,35 +39,15 @@ function isRoute(
   return "href" in node && "title" in node
 }
 
+// פונקציות עזר
 function createSlug(filePath: string): string {
   const relativePath = path.relative(docsDir, filePath)
   const parsed = path.parse(relativePath)
-
   const slugPath = parsed.dir ? `${parsed.dir}/${parsed.name}` : parsed.name
   const normalizedSlug = slugPath.replace(/\\/g, "/")
-
-  if (parsed.name === "index") {
-    return `/${parsed.dir.replace(/\\/g, "/")}` || "/"
-  } else {
-    return `/${normalizedSlug}`
-  }
-}
-
-function findDocumentBySlug(slug: string): Paths | null {
-  function searchDocs(docs: Paths[], currentPath = ""): Paths | null {
-    for (const doc of docs) {
-      if (isRoute(doc)) {
-        const fullPath = currentPath + doc.href
-        if (fullPath === slug) return doc
-        if (doc.items) {
-          const found: Paths | null = searchDocs(doc.items, fullPath)
-          if (found) return found
-        }
-      }
-    }
-    return null
-  }
-  return searchDocs(Documents)
+  return parsed.name === "index"
+    ? `/${parsed.dir.replace(/\\/g, "/")}` || "/"
+    : `/${normalizedSlug}`
 }
 
 async function ensureDirectoryExists(dir: string) {
@@ -68,6 +58,29 @@ async function ensureDirectoryExists(dir: string) {
   }
 }
 
+function findDocumentBySlug(slug: string): Paths | null {
+  function searchDocs(docs: (Paths | LocalizedPaths)[]): Paths | null {
+    for (const doc of docs) {
+      if ("spacer" in doc) continue
+      if ("href" in doc) {
+        if (doc.href === slug) {
+          return {
+            title: typeof doc.title === "string" ? doc.title : doc.title.en,
+            href: doc.href,
+          }
+        }
+        if (doc.items) {
+          const found = searchDocs(doc.items)
+          if (found) return found
+        }
+      }
+    }
+    return null
+  }
+  return searchDocs(Documents)
+}
+
+// הסרת קומפוננטות מותאמות אישית
 function removeCustomComponents() {
   const customComponentNames = [
     "Tabs",
@@ -76,7 +89,6 @@ function removeCustomComponents() {
     "pre",
     "Mermaid",
   ]
-
   return (tree: Node) => {
     visit(
       tree,
@@ -95,9 +107,9 @@ function removeCustomComponents() {
   }
 }
 
-async function processMdxFile(filePath: string) {
+// עיבוד קובץ MDX
+async function processMdxFile(filePath: string): Promise<ProcessedDocument> {
   const rawMdx = await fs.readFile(filePath, "utf-8")
-
   const { content, data: frontmatter } = grayMatter(rawMdx)
 
   const plainContent = await unified()
@@ -120,6 +132,7 @@ async function processMdxFile(filePath: string) {
   }
 }
 
+// איסוף קבצי MDX
 async function getMdxFiles(dir: string): Promise<string[]> {
   let files: string[] = []
   const items = await fs.readdir(dir, { withFileTypes: true })
@@ -127,8 +140,7 @@ async function getMdxFiles(dir: string): Promise<string[]> {
   for (const item of items) {
     const fullPath = path.join(dir, item.name)
     if (item.isDirectory()) {
-      const subFiles = await getMdxFiles(fullPath)
-      files = files.concat(subFiles)
+      files = files.concat(await getMdxFiles(fullPath))
     } else if (item.name.endsWith(".mdx")) {
       files.push(fullPath)
     }
@@ -137,26 +149,24 @@ async function getMdxFiles(dir: string): Promise<string[]> {
   return files
 }
 
+// הפונקציה הראשית
 async function convertMdxToJson() {
   try {
     await ensureDirectoryExists(outputDir)
-
     const mdxFiles = await getMdxFiles(docsDir)
-    const combinedData = []
 
-    for (const file of mdxFiles) {
-      const jsonData = await processMdxFile(file)
-      combinedData.push(jsonData)
-    }
-
-    const combinedOutputPath = path.join(outputDir, "documents.json")
-    await fs.writeFile(
-      combinedOutputPath,
-      JSON.stringify(combinedData, null, 2)
+    const documents = await Promise.all(
+      mdxFiles.map((file) => processMdxFile(file))
     )
+
+    const outputPath = path.join(outputDir, "documents.json")
+    await fs.writeFile(outputPath, JSON.stringify(documents, null, 2))
+
+    console.log("Successfully generated search data")
   } catch (err) {
     console.error("Error processing MDX files:", err)
   }
 }
 
+// הפעלה
 convertMdxToJson()
