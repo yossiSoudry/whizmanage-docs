@@ -168,7 +168,7 @@ export default function Search({ lang }: SearchProps) {
         }}
       >
         <DialogTrigger asChild>
-          <div className="relative flex-1 max-w-md cursor-pointer">
+          <div className="relative flex-1 max-w-96 cursor-pointer">
             <LuSearch
               className={cn(
                 "absolute top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-500 dark:text-neutral-400",
@@ -177,7 +177,7 @@ export default function Search({ lang }: SearchProps) {
             />
             <Input
               className={cn(
-                "h-9 w-full rounded-md border bg-muted shadow-sm md:w-full",
+                "h-9 w-full rounded-md border bg-muted shadow-sm md:w-full flex-1",
                 isRTL ? "pr-10 pl-2" : "pl-10 pr-2",
                 isRTL && "text-right"
               )}

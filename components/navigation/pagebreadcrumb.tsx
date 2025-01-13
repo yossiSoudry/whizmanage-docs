@@ -1,4 +1,6 @@
 import { Fragment } from "react"
+import { SupportedLanguage } from "@/app/[lang]/layout"
+import { Documents } from "@/settings/documents"
 
 import {
   Breadcrumb,
@@ -9,29 +11,63 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 
-export default function PageBreadcrumb({ paths }: { paths: string[] }) {
+interface PageBreadcrumbProps {
+  paths: string[]
+  lang: SupportedLanguage
+}
+
+function findPathTranslation(path: string, lang: SupportedLanguage): string {
+  // חיפוש רקורסיבי בתוך Documents
+  function searchInDocs(docs: typeof Documents): string | null {
+    for (const doc of docs) {
+      if ('spacer' in doc) continue
+      
+      // בדיקה אם זה הנתיב הנוכחי
+      if (doc.href === `/${path}`) {
+        return doc.title[lang]
+      }
+
+      // חיפוש רקורסיבי בתתי-תיקיות
+      if (doc.items) {
+        const found = searchInDocs(doc.items)
+        if (found) return found
+      }
+    }
+    return null
+  }
+
+  const translation = searchInDocs(Documents)
+  return translation || path
+}
+
+export default function PageBreadcrumb({ paths, lang }: PageBreadcrumbProps) {
+  const isRTL = lang === 'he'
+
   return (
     <div className="pb-5">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink>Docs</BreadcrumbLink>
+            <BreadcrumbLink>
+              {isRTL ? "מרכז המידע" : "Docs"}
+            </BreadcrumbLink>
           </BreadcrumbItem>
 
           {paths.map((path, index) => {
-            const href = `/docs/${paths.slice(0, index + 1).join("/")}`
+            const href = `/${lang}/docs/${paths.slice(0, index + 1).join("/")}`
+            const translatedText = findPathTranslation(path, lang)
 
             return (
               <Fragment key={path}>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                   {index < paths.length - 1 ? (
-                    <BreadcrumbLink href={href} className="a">
-                      {toTitleCase(path)}
+                    <BreadcrumbLink href={href}>
+                      {translatedText}
                     </BreadcrumbLink>
                   ) : (
-                    <BreadcrumbPage className="b">
-                      {toTitleCase(path)}
+                    <BreadcrumbPage>
+                      {translatedText}
                     </BreadcrumbPage>
                   )}
                 </BreadcrumbItem>
@@ -42,12 +78,4 @@ export default function PageBreadcrumb({ paths }: { paths: string[] }) {
       </Breadcrumb>
     </div>
   )
-}
-
-function toTitleCase(input: string): string {
-  const words = input.split("-")
-  const capitalizedWords = words.map(
-    (word) => word.charAt(0).toUpperCase() + word.slice(1)
-  )
-  return capitalizedWords.join(" ")
 }

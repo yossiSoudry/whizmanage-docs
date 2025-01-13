@@ -38,11 +38,15 @@ export function SheetLeft({ lang }: SidebarProps) {
           <LuAlignLeft className="!size-6" />
         </Button>
       </SheetTrigger>
-      <SheetContent className="flex flex-col gap-4 px-0" side={lang === "he" ? "right" : "left"}>
+      <SheetContent
+        className="flex flex-col gap-4 px-0"
+        side={lang === "he" ? "right" : "left"}
+        dir={lang === "he" ? "rtl" : "ltr"}
+      >
         <DialogTitle className="sr-only">Menu</DialogTitle>
         <SheetHeader>
           <SheetClose className="px-5" asChild>
-            <Logo />
+            <Logo lang={lang} />
           </SheetClose>
         </SheetHeader>
         <ScrollArea className="flex flex-col gap-4">

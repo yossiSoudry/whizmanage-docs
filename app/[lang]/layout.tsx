@@ -19,7 +19,7 @@ export default async function LangLayout({
     <div dir={direction} className={`${direction === 'rtl' ? 'font-hebrew' : ''}`}>
       <Navbar lang={lang} />
       <main className="px-5 sm:px-8 h-auto">{children}</main>
-      <Footer />
+      <Footer lang={lang} />
     </div>
   )
 }

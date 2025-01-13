@@ -5,11 +5,11 @@ import { cn } from "@/lib/utils"
 import { SupportedLanguage } from "@/app/[lang]/layout"
 
 export default function RightSideBar({ lang }: { lang: SupportedLanguage }) {
-  console.log(lang);
-  
+  const isRTL = lang === "he"
+
   return (
     <div className="flex flex-col gap-3 pl-2">
-      <h3 className="text-sm font-semibold">This content</h3>
+      <h3 className="text-sm font-semibold">{isRTL ? "דברו איתנו" : "Contact Us"}</h3>
       <div className="flex flex-col gap-2">
         <Link
           href="/"
@@ -19,7 +19,7 @@ export default function RightSideBar({ lang }: { lang: SupportedLanguage }) {
             "text-sm text-neutral-800 dark:text-neutral-300/85 no-underline flex items-center gap-1"
           )}
         >
-          <span>Feedback</span>
+          <span>{isRTL ? "למרכז התמיכה" : "Support Center"}</span>
           <LuArrowUpRight className="w-4 h-4 inline-block  rtl:rotate-[270deg]" />
         </Link>
         <Link
@@ -30,7 +30,7 @@ export default function RightSideBar({ lang }: { lang: SupportedLanguage }) {
             "text-sm text-neutral-800 dark:text-neutral-300/85 no-underline flex items-center gap-1"
           )}
         >
-          <span>Edit page</span>
+          <span>{isRTL ? "לדיווח על תקלה" : "Report Issue"}</span>
           <LuArrowUpRight className="w-4 h-4 inline-block rtl:rotate-[270deg]" />
         </Link>
       </div>

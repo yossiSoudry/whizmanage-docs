@@ -5,8 +5,7 @@ export const gtm = "GTM-XXXXXXX"
 export const gtmconnected = true
 
 export const sitename = "WhizManage Docs"
-export const description =
-  "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements."
+export const description = "Welcome to our Documentation Hub - your comprehensive resource for technical guidance and implementation details. Here you'll find detailed documentation, step-by-step tutorials, practical examples, and best practices to help you successfully integrate and utilize our platform. Whether you're just getting started or looking to optimize your existing implementation, our documentation is structured to support your journey with clear, concise, and up-to-date information.";
 export const keywords = [
   "Whizmanage",
   "Woocommerce",
@@ -14,7 +13,7 @@ export const keywords = [
   "Wordpress",
   "woo",
 ]
-export const urlimage = "/images/og-image.png"
+export const urlimage = "/icon.svg"
 export const imagealt = "WhizManage Documentation"
 export const twitterhandle = "@whizmanage"
 

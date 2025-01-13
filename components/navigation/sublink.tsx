@@ -55,7 +55,7 @@ export default function SubLink(props: SubLinkProps) {
   const { title, href, items, noLink, level, isSheet, lang } = props
 
   const Comp = (
-    <Anchor activeClassName="text-primary text-sm font-medium" href={href}>
+    <Anchor activeClassName="text-fuchsia-500 text-sm font-medium" href={href}>
       {title}
     </Anchor>
   )

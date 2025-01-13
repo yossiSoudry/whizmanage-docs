@@ -32,10 +32,11 @@ export function BackToTop({ className }: { className?: string }): ReactElement {
     <button
       ref={ref}
       onClick={ScrollUp}
-      className={cn("flex items-center ml-2 transition opacity-0", className)}
+      className={cn("flex items-center ml-2 transition opacity-0 gap-1 rounded-sm text-xs border py-1 px-2 hover:bg-muted rtl:flex-row-reverse", className)}
     >
-      <LuArrowUp className="inline-block w-4 h-4 mr-1 align-middle" />
-      <span>Scroll to top</span>
+      <LuArrowUp className="inline-block w-4 h-4 align-middle" />
+      <span className="rtl:hidden">Scroll to top</span>
+      <span className="ltr:hidden">גלול לראש הדף</span>
     </button>
   )
 }
