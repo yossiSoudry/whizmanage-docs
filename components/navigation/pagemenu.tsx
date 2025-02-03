@@ -33,14 +33,14 @@ export default function PageMenu({ isSheet = false, lang }: PageMenuProps) {
         if ("spacer" in item) {
           return (
             <div key={`spacer-${index}`} className="my-2 mr-3">
-              <hr className="border-t border-gray-300/50" />
+              {/* <hr className="border-t border-gray-300/50" /> */}
             </div>
           )
         }
         return (
           <div key={getLocalizedText(item.title, lang) + index} className="mb-2">
             {item.heading && (
-              <h2 className="text-sm font-bold mb-2 rtl:text-right">
+              <h2 className="text-sm font-bold mb-2 rtl:text-right text-muted-foreground">
                 {getLocalizedText(item.heading, lang)}
               </h2>
             )}

@@ -17,7 +17,7 @@ export default function Note({
     "dark:bg-neutral-900 bg-neutral-100": type == "note",
     "dark:bg-green-950 bg-green-100 border-green-200 dark:border-green-900":
       type === "success",
-    "dark:bg-orange-950 bg-orange-100 border-orange-200 dark:border-orange-900":
+    "dark:bg-fuchsia-950 bg-fuchsia-100 border-fuchsia-200 dark:border-fuchsia-900 text-fuchsia-800 dark:text-fuchsia-300":
       type === "warning",
     "dark:bg-red-950 bg-red-100 border-red-200 dark:border-red-900":
       type === "danger",

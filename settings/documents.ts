@@ -58,14 +58,44 @@ export const Documents: LocalizedPaths[] = [
   },
   {
     title: {
-      en: "Navigation",
-      he: "ניווט"
+      en: "Variations",
+      he: "ווריאציות"
     },
-    href: "/navigation",
+    href: "/variations",
     heading: {
       en: "Documents",
       he: "מסמכים"
-    }
+    },
+    items: [
+      {
+        title: {
+          en: "Attributes",
+          he: "מאפיינים"
+        },
+        href: "/attributes",
+      },
+      {
+        title: {
+          en: "Options", 
+          he: "אופציות"
+        },
+        href: "/options",
+      },
+      {
+        title: {
+          en: "Create variations",
+          he: "יצירת ווריאציות"  
+        },
+        href: "/create-variations",
+      },
+      {
+        title: {
+          en: "Manage variations",
+          he: "ניהול ווריאציות"  
+        },
+        href: "/manage-variations",
+      },
+    ],
   },
   {
     title: {

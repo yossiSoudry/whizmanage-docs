@@ -15,11 +15,11 @@ export function Step({ children }: PropsWithChildren<StepProps>) {
       {Children.map(children, (child, index) => (
         <div
           className={cn(
-            "relative border-l pl-9",
+            "relative border-l rtl:border-l-0 rtl:border-r pl-9 rtl:pl-0 rtl:pr-9",
             clsx({ "pb-5": index < length - 1 })
           )}
         >
-          <div className="absolute -left-4 flex items-center justify-center w-8 h-8 rounded-full bg-secondary text-xs font-code font-medium">
+          <div className="absolute -left-4 rtl:-right-4 flex items-center justify-center w-8 h-8 rounded-full bg-secondary text-xs font-code font-medium">
             {index + 1}
           </div>
           {child}

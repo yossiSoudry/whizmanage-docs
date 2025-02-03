@@ -43,7 +43,7 @@ function isRoute(
 
 export default function SubLink(props: SubLinkProps) {
   const path = usePathname()
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   const isRTL = props.lang === 'he'
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export default function SubLink(props: SubLinkProps) {
   const { title, href, items, noLink, level, isSheet, lang } = props
 
   const Comp = (
-    <Anchor activeClassName="text-fuchsia-500 text-sm font-medium" href={href}>
+    <Anchor activeClassName="text-fuchsia-500 text-sm font-bold" href={href}>
       {title}
     </Anchor>
   )
@@ -73,7 +73,7 @@ export default function SubLink(props: SubLinkProps) {
   if (!items) {
     return (
       <div className={cn(
-        "flex flex-col text-sm",
+        "flex flex-col text-sm hover:underline",
         isRTL && "text-right"
       )}>
         {titleOrLink}

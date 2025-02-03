@@ -168,7 +168,7 @@ export default function Search({ lang }: SearchProps) {
         }}
       >
         <DialogTrigger asChild>
-          <div className="relative flex-1 max-w-96 cursor-pointer">
+          <div className="relative flex-1 max-w-96 cursor-pointer shadow-md hover:scale-[1.02] hover:shadow-xl transition-all">
             <LuSearch
               className={cn(
                 "absolute top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-500 dark:text-neutral-400",
