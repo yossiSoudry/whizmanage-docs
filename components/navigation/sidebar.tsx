@@ -22,7 +22,7 @@ type SidebarProps = {
 
 export function Sidebar({ lang }: SidebarProps) {
   return (
-    <aside className="md:flex hidden flex-[1] min-w-[230px] sticky top-16 flex-col h-[94.5vh] overflow-y-auto">
+    <aside className="md:flex hidden flex-[1] !w-48 !min-w-48 !max-w-48 sticky top-16 flex-col h-[94.5vh] overflow-y-auto">
       <ScrollArea className="py-4">
         <PageMenu lang={lang} />
       </ScrollArea>

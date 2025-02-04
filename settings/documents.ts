@@ -70,7 +70,7 @@ export const Documents: LocalizedPaths[] = [
       {
         title: {
           en: "Attributes",
-          he: "מאפיינים"
+          he: "תכונות"
         },
         href: "/attributes",
       },
@@ -86,14 +86,14 @@ export const Documents: LocalizedPaths[] = [
           en: "Create variations",
           he: "יצירת ווריאציות"  
         },
-        href: "/create-variations",
+        href: "/creation",
       },
       {
         title: {
           en: "Manage variations",
           he: "ניהול ווריאציות"  
         },
-        href: "/manage-variations",
+        href: "/management",
       },
     ],
   },
