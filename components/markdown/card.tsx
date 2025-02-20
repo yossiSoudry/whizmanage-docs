@@ -36,10 +36,10 @@ export default function Card({
       className={clsx(
         "group",
         variant === "small"
-          ? "relative border rounded-lg p-3 flex items-center space-x-2 bg-white dark:bg-neutral-900 dark:border-neutral-800 shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg hover:dark:shadow-md"
+          ? "relative border rounded-lg p-3 flex items-center space-x-2 bg-white dark:bg-slate-900 dark:border-slate-800 shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg hover:dark:shadow-md"
           : variant === "image"
-            ? "relative border rounded-lg p-1 h-full flex flex-col justify-between bg-white dark:bg-neutral-900 dark:border-neutral-800 shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg hover:dark:shadow-md"
-            : "relative p-6 border rounded-lg h-full flex flex-col justify-between bg-white dark:bg-neutral-900 dark:border-neutral-800 shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg hover:dark:shadow-md",
+            ? "relative border rounded-lg p-1 h-full flex flex-col justify-between bg-white dark:bg-slate-950 dark:border-slate-800 shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg hover:dark:shadow-md"
+            : "relative p-6 border rounded-lg h-full flex flex-col justify-between bg-white dark:bg-slate-950/50 dark:border-slate-800 shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg hover:dark:shadow-md",
         className
       )}
     >

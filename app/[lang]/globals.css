@@ -52,7 +52,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border rtl:font-heebo;
   }
 
   body {
@@ -61,9 +61,9 @@
 }
 
 .typography {
-  @apply prose prose-zinc prose-headings:scroll-m-20 prose-code:rounded-md prose-code:p-1 prose-code:font-code prose-code:leading-6 prose-code:before:content-none prose-code:after:content-none prose-pre:border prose-pre:bg-neutral-100 prose-img:rounded-md prose-img:border;
+  @apply prose prose-zinc prose-headings:scroll-m-20 prose-code:rounded-md prose-code:p-1 prose-code:font-code prose-code:leading-6 prose-code:before:content-none prose-code:after:content-none prose-pre:border prose-pre:bg-slate-100 prose-img:rounded-md prose-img:border;
   @apply w-[85vw] !min-w-full pt-2 text-sm prose-code:text-xs sm:mx-auto sm:w-full;
-  @apply dark:prose-invert prose-code:text-neutral-800 dark:prose-code:bg-neutral-900 dark:prose-code:text-white dark:prose-pre:bg-neutral-900;
+  @apply dark:prose-invert prose-code:text-slate-800 dark:prose-code:bg-slate-900 dark:prose-code:text-white dark:prose-pre:bg-slate-900;
 }
 
 .prose {
@@ -93,11 +93,11 @@
 }
 
 .prose table {
-  @apply border-collapse border border-border;
+  @apply border-collapse border border-border !rounded-md;
 }
 
 .prose th {
-  @apply dark:bg-neutral-900;
+  @apply dark:bg-slate-950/50;
 }
 
 .prose th,
@@ -156,8 +156,8 @@ pre > code {
 }
 
 .highlight-line {
-  @apply dark:bg-neutral-800/90;
-  @apply bg-neutral-200/90;
+  @apply dark:bg-slate-800/90;
+  @apply bg-slate-200/90;
 }
 
 .highlight-comp > code {

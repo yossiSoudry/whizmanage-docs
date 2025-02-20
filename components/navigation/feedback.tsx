@@ -16,7 +16,7 @@ export default function RightSideBar({ lang }: { lang: SupportedLanguage }) {
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            "text-sm text-neutral-800 dark:text-neutral-300/85 no-underline flex items-center gap-1"
+            "text-sm text-slate-800 dark:text-slate-300/85 no-underline flex items-center gap-1"
           )}
         >
           <span>{isRTL ? "למרכז התמיכה" : "Support Center"}</span>
@@ -27,7 +27,7 @@ export default function RightSideBar({ lang }: { lang: SupportedLanguage }) {
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            "text-sm text-neutral-800 dark:text-neutral-300/85 no-underline flex items-center gap-1"
+            "text-sm text-slate-800 dark:text-slate-300/85 no-underline flex items-center gap-1"
           )}
         >
           <span>{isRTL ? "לדיווח על תקלה" : "Report Issue"}</span>

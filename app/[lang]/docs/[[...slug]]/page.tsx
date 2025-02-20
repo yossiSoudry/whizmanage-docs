@@ -47,7 +47,7 @@ export default async function Pages({ params }: PageProps) {
             <Feedback lang={lang} />
           )}
           {Settings.totop && (
-            <BackToTop className="mt-6 self-start text-sm text-neutral-800 dark:text-neutral-300/85" />
+            <BackToTop className="mt-6 self-start text-sm text-slate-800 dark:text-slate-300/85" />
           )}
         </div>
       )}

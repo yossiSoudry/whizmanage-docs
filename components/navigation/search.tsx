@@ -135,7 +135,7 @@ export default function Search({ lang }: SearchProps) {
         <DialogClose key={href} asChild>
           <Anchor
             className={cn(
-              "w-full px-3 flex items-center gap-2.5 text-[15px] rounded-sm hover:bg-neutral-100 dark:hover:bg-neutral-900",
+              "w-full px-3 flex items-center gap-2.5 text-[15px] rounded-sm hover:bg-slate-100 dark:hover:bg-slate-900",
               isRTL && "flex-row-reverse"
             )}
             href={href}
@@ -171,7 +171,7 @@ export default function Search({ lang }: SearchProps) {
           <div className="relative flex-1 max-w-96 cursor-pointer shadow-md hover:scale-[1.02] hover:shadow-xl transition-all">
             <LuSearch
               className={cn(
-                "absolute top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-500 dark:text-neutral-400",
+                "absolute top-1/2 -translate-y-1/2 h-4 w-4 text-slate-500 dark:text-slate-400",
                 isRTL ? "right-3" : "left-3"
               )}
             />
@@ -187,7 +187,7 @@ export default function Search({ lang }: SearchProps) {
             />
             <div
               className={cn(
-                "absolute top-1/2 hidden -translate-y-1/2 items-center gap-0.5 rounded-sm bg-zinc-200 p-1 text-xs font-mono font-medium dark:bg-neutral-700 sm:flex",
+                "absolute top-1/2 hidden -translate-y-1/2 items-center gap-0.5 rounded-sm bg-zinc-200 p-1 text-xs font-mono font-medium dark:bg-slate-700 sm:flex",
                 isRTL ? "left-2" : "right-2"
               )}
             >
@@ -261,7 +261,7 @@ export default function Search({ lang }: SearchProps) {
                         <DialogClose key={item.href} asChild>
                           <Anchor
                             className={cn(
-                              "p-3 flex flex-col max-w-[620px] gap-0.5 text-[15px] rounded-sm hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full",
+                              "p-3 flex flex-col max-w-[620px] gap-0.5 text-[15px] rounded-sm hover:bg-slate-100 dark:hover:bg-slate-900 w-full",
                               isRTL && "items-end text-right"
                             )}
                             href={`/${lang}/docs${item.href}`}
@@ -278,7 +278,7 @@ export default function Search({ lang }: SearchProps) {
                             {"snippet" in item && item.snippet && (
                               <p
                                 className={cn(
-                                  "truncate text-xs text-neutral-500 dark:text-neutral-400",
+                                  "truncate text-xs text-slate-500 dark:text-slate-400",
                                   isRTL && "text-right"
                                 )}
                                 dangerouslySetInnerHTML={{

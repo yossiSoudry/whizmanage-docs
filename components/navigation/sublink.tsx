@@ -114,7 +114,7 @@ export default function SubLink(props: SubLinkProps) {
         <CollapsibleContent className="CollapsibleContent">
           <div
             className={cn(
-              "mt-2.5 flex flex-col gap-3 text-sm border-l text-neutral-800 dark:text-neutral-300/85",
+              "mt-2.5 flex flex-col gap-3 text-sm border-l text-slate-800 dark:text-slate-300/85",
               isRTL ? "items-end border-r border-l-0 pr-4" : "items-start pl-4",
               level > 0 && cn(
                 isRTL ? "mr-1 pr-4" : "ml-1 pl-4",

@@ -17,7 +17,7 @@ interface MermaidProps {
 }
 
 mermaid.initialize({
-  theme: "neutral",
+  theme: "forest",
 })
 
 const Mermaid = ({ chart, className }: MermaidProps) => {
