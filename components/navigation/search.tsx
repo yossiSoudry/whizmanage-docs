@@ -65,6 +65,10 @@ export default function Search({ lang }: SearchProps) {
   const isRTL = lang === "he"
 
   const debouncedSearch = useMemo(
+
+
+
+    
     () =>
       debounce((input) => {
         setIsLoading(true)

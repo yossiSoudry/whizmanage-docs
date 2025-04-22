@@ -58,14 +58,65 @@ export const Documents: LocalizedPaths[] = [
   },
   {
     title: {
-      en: "Variations",
-      he: "ווריאציות"
+      en: "Import",
+      he: "ייבוא"
     },
-    href: "/variations",
+    href: "/import",
     heading: {
       en: "Documents",
       he: "מסמכים"
     },
+    items: [
+      // {
+      //   title: {
+      //     en: "Overview",
+      //     he: "סקירה כללית"
+      //   },
+      //   href: "/",
+      // },
+      // {
+      //   title: {
+      //     en: "Import Process", 
+      //     he: "תהליך הייבוא"
+      //   },
+      //   href: "/process",
+      // },
+      {
+        title: {
+          en: "Google Sheets Import", 
+          he: "ייבוא מ-Google Sheets"
+        },
+        href: "/spreadsheet",
+      },
+      // {
+      //   title: {
+      //     en: "WooCommerce Import", 
+      //     he: "ייבוא מקבצי WooCommerce"
+      //   },
+      //   href: "/woocommerce",
+      // },
+      // {
+      //   title: {
+      //     en: "WhizManage Import", 
+      //     he: "ייבוא מקבצי WhizManage"
+      //   },
+      //   href: "/whizmanage",
+      // },
+      // {
+      //   title: {
+      //     en: "Review Mode", 
+      //     he: "מצב סקירה ועריכה"
+      //   },
+      //   href: "/review",
+      // },
+    ],
+  },
+  {
+    title: {
+      en: "Variations",
+      he: "ווריאציות"
+    },
+    href: "/variations",
     items: [
       {
         title: {
@@ -97,119 +148,119 @@ export const Documents: LocalizedPaths[] = [
       },
     ],
   },
-  {
-    title: {
-      en: "Structure",
-      he: "מבנה"
-    },
-    href: "/structure",
-    items: [
-      {
-        title: {
-          en: "Deep",
-          he: "עמוק"
-        },
-        href: "/deep",
-        items: [
-          {
-            title: {
-              en: "Deeper",
-              he: "עמוק יותר"
-            },
-            href: "/deeper",
-            items: [
-              {
-                title: {
-                  en: "Even deeper",
-                  he: "עמוק מאוד"
-                },
-                href: "/even-deeper",
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
+  // {
+  //   title: {
+  //     en: "Structure",
+  //     he: "מבנה"
+  //   },
+  //   href: "/structure",
+  //   items: [
+  //     {
+  //       title: {
+  //         en: "Deep",
+  //         he: "עמוק"
+  //       },
+  //       href: "/deep",
+  //       items: [
+  //         {
+  //           title: {
+  //             en: "Deeper",
+  //             he: "עמוק יותר"
+  //           },
+  //           href: "/deeper",
+  //           items: [
+  //             {
+  //               title: {
+  //                 en: "Even deeper",
+  //                 he: "עמוק מאוד"
+  //               },
+  //               href: "/even-deeper",
+  //             },
+  //           ],
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     spacer: true,
   },
-  {
-    title: {
-      en: "Markdown",
-      he: "מארקדאון"
-    },
-    href: "/markdown",
-    heading: {
-      en: "Components",
-      he: "רכיבים"
-    },
-    items: [
-      {
-        title: {
-          en: "Cards",
-          he: "כרטיסים"
-        },
-        href: "/cards",
-      },
-      {
-        title: {
-          en: "Diagrams",
-          he: "תרשימים"
-        },
-        href: "/diagrams",
-      },
-      {
-        title: {
-          en: "Filetree",
-          he: "עץ קבצים"
-        },
-        href: "/filetree",
-      },
-      {
-        title: {
-          en: "Lists",
-          he: "רשימות"
-        },
-        href: "/lists",
-      },
-      {
-        title: {
-          en: "Maths",
-          he: "מתמטיקה"
-        },
-        href: "/maths",
-      },
-      {
-        title: {
-          en: "Notes",
-          he: "הערות"
-        },
-        href: "/notes",
-      },
-      {
-        title: {
-          en: "Steps",
-          he: "שלבים"
-        },
-        href: "/steps",
-      },
-      {
-        title: {
-          en: "Table",
-          he: "טבלה"
-        },
-        href: "/table",
-      },
-      {
-        title: {
-          en: "Tabs",
-          he: "לשוניות"
-        },
-        href: "/tabs",
-      },
-    ],
-  },
+  // {
+  //   title: {
+  //     en: "Markdown",
+  //     he: "מארקדאון"
+  //   },
+  //   href: "/markdown",
+  //   heading: {
+  //     en: "Components",
+  //     he: "רכיבים"
+  //   },
+  //   items: [
+  //     {
+  //       title: {
+  //         en: "Cards",
+  //         he: "כרטיסים"
+  //       },
+  //       href: "/cards",
+  //     },
+  //     {
+  //       title: {
+  //         en: "Diagrams",
+  //         he: "תרשימים"
+  //       },
+  //       href: "/diagrams",
+  //     },
+  //     {
+  //       title: {
+  //         en: "Filetree",
+  //         he: "עץ קבצים"
+  //       },
+  //       href: "/filetree",
+  //     },
+  //     {
+  //       title: {
+  //         en: "Lists",
+  //         he: "רשימות"
+  //       },
+  //       href: "/lists",
+  //     },
+  //     {
+  //       title: {
+  //         en: "Maths",
+  //         he: "מתמטיקה"
+  //       },
+  //       href: "/maths",
+  //     },
+  //     {
+  //       title: {
+  //         en: "Notes",
+  //         he: "הערות"
+  //       },
+  //       href: "/notes",
+  //     },
+  //     {
+  //       title: {
+  //         en: "Steps",
+  //         he: "שלבים"
+  //       },
+  //       href: "/steps",
+  //     },
+  //     {
+  //       title: {
+  //         en: "Table",
+  //         he: "טבלה"
+  //       },
+  //       href: "/table",
+  //     },
+  //     {
+  //       title: {
+  //         en: "Tabs",
+  //         he: "לשוניות"
+  //       },
+  //       href: "/tabs",
+  //     },
+  //   ],
+  // },
  ]
 
 
