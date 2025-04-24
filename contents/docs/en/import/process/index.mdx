@@ -1,0 +1,155 @@
+---
+title: Product Import Process
+description: "Comprehensive guide to the product import process in the WhizManage system"
+keywords: ["product import", "file upload", "CSV", "Excel"]
+---
+
+## Product Import Process
+
+The WhizManage system allows importing products easily from various sources. Below is a detailed guide to the general import process.
+
+### Supported Formats
+
+The system supports various formats for product import:
+
+| Format | File Extension | Notes |
+|--------|------------|--------|
+| **Excel** | .xlsx, .xls | Supports multiple sheets |
+| **CSV** | .csv | Recommended for maximum compatibility |
+| **ODS** | .ods | Open spreadsheet format |
+
+<Note title="Tip" type="info">
+Use CSV format for maximum compatibility with other systems and to prevent data loss.
+</Note>
+
+### How to Start the Import Process
+
+<Step>
+<StepItem title="Opening the Import Window">
+
+To open the import window:
+1. Go to the product management screen
+2. Find the "Import" button at the top of the screen (marked with a down arrow icon)
+3. Click on the Import button
+
+<img src="https://placehold.co/800x300?text=Import+button+location" alt="Import button location" />
+</StepItem>
+
+<StepItem title="Selecting Import Type">
+
+In the import menu, you can choose between different options:
+1. **WooCommerce File** - for importing CSV files from WooCommerce
+2. **Google Sheets File** - for connecting and interfacing with Google Sheets
+3. **WhizManage File** - for importing files from other WhizManage systems
+
+<img src="https://placehold.co/800x300?text=Import+type+selection" alt="Import type selection" />
+</StepItem>
+
+<StepItem title="Selecting Import Mode">
+
+After selecting the import type, you'll need to choose the import mode:
+
+1. **New Products** - for creating new products in the system
+2. **Update Products** - for updating existing products in the system
+
+<Note title="Important" type="warning">
+The import mode selection affects how product IDs and various fields are handled.
+</Note>
+</StepItem>
+
+<StepItem title="Uploading a File">
+
+After selecting the import type and mode:
+1. Drag the import file to the designated area, or click to select a file
+2. The system will check the file's validity
+3. If the file is valid, you can proceed to the next step
+
+<img src="https://placehold.co/800x300?text=File+upload+area" alt="File upload area" />
+
+<Note title="Tip" type="info">
+The system provides examples for each import type. Click on "Download Example File" below the drag area.
+</Note>
+</StepItem>
+
+<StepItem title="Starting the Import Process">
+
+After uploading the file:
+1. Click on the "Start Import" button
+2. The system will begin processing the file
+3. A progress indicator will be displayed during processing
+
+<img src="https://placehold.co/800x300?text=Start+import+button" alt="Start import button" />
+</StepItem>
+</Step>
+
+### Import Processing
+
+The system performs several automatic actions during file processing:
+
+1. **File Structure Analysis**
+   - Identifying columns and fields
+   - Translating field names to the internal format
+   - Checking field validity
+
+2. **Image Processing**
+   - Uploading product images from URLs
+   - Creating image versions in different sizes
+   - Associating images with the appropriate products
+
+3. **Category and Tag Handling**
+   - Identifying existing categories and tags
+   - Creating new categories and tags
+   - Associating products with the appropriate categories
+
+4. **Product Attribute Handling**
+   - Identifying existing attributes
+   - Creating new attributes
+   - Setting attribute values
+
+### Import Review Table
+
+After file processing, in "New Products" mode, a review table will appear:
+
+<img src="https://placehold.co/800x300?text=Import+review+table" alt="Import review table" />
+
+The table allows:
+- Viewing products before final import
+- Editing data as needed
+- Removing products from the import
+- Filtering and searching products
+
+<Note title="Tip" type="info">
+Use the editing functions in the table to correct incorrect or missing data before final import.
+</Note>
+
+### Saving the Import
+
+After reviewing the table and editing the data:
+
+1. Click on the "Save Import" button at the top of the screen
+2. The system will begin the final import process
+3. A progress indicator will display the process status
+4. At the end of the process, a summary message will be displayed
+
+<img src="https://placehold.co/800x300?text=Save+import+button" alt="Save import button" />
+
+### Tips for Successful Import
+
+1. **File Preparation**
+   - Use the example file as a template
+   - Ensure all required fields are filled
+   - Check the validity of image URLs
+
+2. **Performing Import**
+   - Start with a small file to test the process
+   - Use a test environment before importing to the live site
+   - Back up your system before large imports
+
+3. **Solving Common Problems**
+   - Character encoding issues: ensure the file is in UTF-8 encoding
+   - Image upload problems: check URLs and access permissions
+   - Field errors: check data compatibility with system requirements
+
+<Note title="Important" type="warning">
+Importing products is an action that can affect your entire store. Always back up your system before performing a significant import.
+</Note>

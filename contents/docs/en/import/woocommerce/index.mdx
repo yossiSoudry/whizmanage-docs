@@ -1,0 +1,171 @@
+---
+title: Import from WooCommerce Files
+description: "Detailed guide for importing products from WooCommerce CSV files"
+keywords: ["WooCommerce", "product import", "CSV", "variations"]
+---
+
+## Importing Products from WooCommerce Files
+
+The WhizManage system allows for smooth and simple importing of products from WooCommerce systems using CSV files. This feature is particularly useful when migrating from an existing WooCommerce store or when managing products simultaneously across multiple systems.
+
+### Benefits of Importing from WooCommerce
+
+1. **Full Compatibility**
+   - Support for standard WooCommerce data structure
+   - Automatic conversion of fields and column names
+   - Preservation of relationships between products
+
+2. **Complete Data Import**
+   - Transfer of all product data including images and complex information
+   - Support for product variations
+   - Preservation of meta-data and custom information
+
+3. **Flexibility**
+   - Option to import new products or update existing ones
+   - Selection of specific fields to import
+   - Option to edit data before final import
+
+### Preparing a CSV File from WooCommerce
+
+<Step>
+<StepItem title="Exporting a File from WooCommerce">
+
+1. In the WooCommerce admin interface, navigate to "Products" > "Export"
+2. Select "Products" in the export menu
+3. Choose the CSV format (default)
+4. Define the fields to export or use the default settings
+5. Click "Export" to download the file
+
+<img src="https://placehold.co/800x300?text=WooCommerce+export+interface" alt="WooCommerce export interface" />
+
+<Note title="Tip" type="info">
+Choose "Export All Products" to include both regular products and variations in the export file.
+</Note>
+</StepItem>
+
+<StepItem title="Checking File Completeness">
+
+Before importing, verify that the file includes:
+1. Valid column headers
+2. Complete product data
+3. Valid links to images
+4. Variation information if relevant
+
+<Note title="Important" type="warning">
+If the file is opened in a spreadsheet program, ensure you don't alter the original data structure when saving it again.
+</Note>
+</StepItem>
+</Step>
+
+### Importing the File to WhizManage
+
+<Step>
+<StepItem title="Starting the Import Process">
+
+1. Go to the product management screen in the WhizManage system
+2. Click on the "Import" button (upload icon)
+3. Select "WooCommerce File" from the menu
+
+<img src="https://placehold.co/800x300?text=Import+button+in+WhizManage" alt="Import button in WhizManage" />
+</StepItem>
+
+<StepItem title="Selecting Import Option">
+
+You need to choose the appropriate import type:
+
+1. **New Products**
+   - For creating new products in the system
+   - The system will ignore existing product IDs
+   - Suitable for migrating from one system to another
+
+2. **Update Products**
+   - For updating existing products in the system
+   - The system will identify products by ID or SKU
+   - Suitable for synchronization or updating existing products
+
+<img src="https://placehold.co/800x300?text=Import+options" alt="Import options" />
+</StepItem>
+
+<StepItem title="Uploading the File">
+
+1. Drag the CSV file to the designated area or click to select a file
+2. The system will check the file's compatibility
+3. You'll receive a confirmation message if the file was accepted successfully
+
+<img src="https://placehold.co/800x300?text=File+upload+area" alt="File upload area" />
+
+<Note title="Tip" type="info">
+If you're unsure about the required file structure, click on "Download Example File" to get a ready template.
+</Note>
+</StepItem>
+
+<StepItem title="Starting File Processing">
+
+After successfully uploading the file:
+1. Click on the "Start Creating Products" or "Start Updating Products" button (depending on the option you chose)
+2. The system will begin processing the file
+3. A progress indicator will be displayed during processing
+
+<img src="https://placehold.co/800x300?text=Start+processing+button" alt="Start processing button" />
+</StepItem>
+</Step>
+
+### WooCommerce File Structure
+
+A standard WooCommerce file includes the following main columns:
+
+| Column | Description | Example |
+|-------|--------|--------|
+| **ID** | Unique product identifier | 123 |
+| **Type** | Product type | simple, variable, variation |
+| **SKU** | Unique catalog number | ABC-123 |
+| **Name** | Product name | Cotton Shirt |
+| **Published** | Publication status | 1 (yes) or 0 (no) |
+| **Regular price** | Regular price | 99.90 |
+| **Sale price** | Sale price | 79.90 |
+| **Categories** | Categories | Clothing, Shirts |
+| **Images** | Links to images | http://example.com/image.jpg |
+| **Attribute X name** | Attribute name | Color |
+| **Attribute X value(s)** | Attribute values | Red, Blue, Green |
+
+<Note title="Important" type="warning">
+The WhizManage system automatically identifies columns even if they're in Hebrew, but it's recommended to use an English file for maximum compatibility.
+</Note>
+
+### Handling Variations
+
+When importing products with variations:
+
+1. **File Structure**
+   - The parent product (`variable`) appears first
+   - Followed by all variations (`variation`)
+   - Variations are linked to the parent via the `Parent` field
+
+2. **Attribute Handling**
+   - `Attribute X name` columns define attribute names
+   - `Attribute X value(s)` columns define the options
+   - `Attribute X visible` columns define if the attribute is visible
+   - `Attribute X global` columns define if the attribute is global
+
+<img src="https://placehold.co/800x300?text=Variations+structure+in+CSV" alt="Variations structure in CSV file" />
+
+### Tips for Successful Import from WooCommerce
+
+1. **File Preparation**
+   - Maintain the original column structure
+   - Ensure SKUs are unique
+   - Verify that image links are valid and accessible
+
+2. **During Import**
+   - Start with a small import for testing
+   - Pay attention to required fields
+   - Use the review table to verify data accuracy
+
+3. **Troubleshooting Common Issues**
+   - Character encoding issues: ensure the file is in UTF-8 encoding
+   - Attribute issues: check the structure and format of attribute values
+   - Product relationships: ensure correct order of parent products and variations
+
+<Note title="Important" type="warning">
+Complex imports with hundreds of products and variations may take a long time. Do not close the window or refresh the page during the process.
+</Note>

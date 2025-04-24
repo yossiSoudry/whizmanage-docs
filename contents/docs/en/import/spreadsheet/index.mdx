@@ -1,0 +1,218 @@
+---
+title: Import from Google Sheets
+description: "Detailed guide for importing and synchronizing products using Google Sheets"
+keywords: ["Google Sheets", "product import", "synchronization", "spreadsheets"]
+---
+
+## Importing and Synchronizing Products from Google Sheets
+
+The WhizManage system offers a unique solution for managing products using Google Sheets, allowing you to import, update, and manage your store's products easily through a familiar and user-friendly interface.
+
+### Benefits of Using Google Sheets
+
+<Step>
+<StepItem title="Collaborative Work">
+
+Google Sheets allows:
+- Multiple users working simultaneously
+- Instant synchronization of changes
+- Version history and ability to revert to previous versions
+
+<img src="https://placehold.co/800x300?text=Collaborative+work+on+Google+Sheets" alt="Collaborative work in Google Sheets" />
+</StepItem>
+
+<StepItem title="Accessibility from Anywhere">
+
+Data is available:
+- From any device with internet connection
+- No need to install software
+- High security with advanced permission options
+
+<img src="https://placehold.co/800x300?text=Access+from+anywhere" alt="Access from anywhere" />
+</StepItem>
+
+<StepItem title="Easy Management">
+
+The familiar management interface allows:
+- Simple editing of product data
+- Using formulas for automatic calculations
+- Easy sorting and filtering of information
+
+<img src="https://placehold.co/800x300?text=Easy+management" alt="Easy management" />
+</StepItem>
+</Step>
+
+### Setting Up Google Sheets for Import
+
+<Step>
+<StepItem title="Create a Copy of the Example File">
+
+1. Open the attached [example file](https://docs.google.com/spreadsheets/d/example)
+2. Click on "File" > "Make a copy"
+3. Save the file to your Google account
+
+<Note title="Tip" type="info">
+The example file already includes all the required columns and the integration script.
+</Note>
+</StepItem>
+
+<StepItem title="Name the File">
+
+For proper synchronization:
+1. Give the file a name identical to your website's URL
+2. For example: if your site is 'mystore.com', name the file 'mystore.com'
+
+<Note title="Important" type="warning">
+Matching the name to your domain is critical for automatic integration to work.
+</Note>
+</StepItem>
+
+<StepItem title="Set Sharing Permissions">
+
+1. Click on the "Share" button in the top corner
+2. Set the file to "Anyone with the link can view"
+3. Copy the displayed link
+
+<img src="https://placehold.co/800x300?text=Share+settings" alt="Sharing settings" />
+</StepItem>
+
+<StepItem title="Activate the WhizManage Script">
+
+After setting up the file:
+1. Look for a new tab named "WhizManage" in the top menu
+2. Click on "WhizManage" > "Update File"
+3. The first time, you'll need to authorize permissions for the script
+
+<Note title="Important" type="warning">
+When authorizing permissions, make sure you're logged into your Google account and trust the WhizManage application.
+</Note>
+</StepItem>
+</Step>
+
+### Connecting the Google Sheets File to the System
+
+<Step>
+<StepItem title="Open the Import Interface">
+
+In the WhizManage system:
+1. Navigate to Product Management
+2. Click on the "Import" button
+3. Select the "Google Sheets file" option
+
+<img src="https://placehold.co/800x300?text=Import+interface" alt="Import interface" />
+</StepItem>
+
+<StepItem title="Enter the Google Sheets Link">
+
+1. Paste the link you copied from the previous step
+2. Verify that the link contains the correct file ID
+3. Click "Check Connection" to verify the link's validity
+
+<img src="https://placehold.co/800x300?text=Enter+Google+Sheets+link" alt="Enter Google Sheets link" />
+
+<Note title="Tip" type="info">
+The link should be in the format: `https://docs.google.com/spreadsheets/d/[FILE_ID]/edit?usp=sharing`
+</Note>
+</StepItem>
+
+<StepItem title="Verify and Confirm Connection">
+
+After checking the connection:
+1. The system will display a confirmation message if the connection is valid
+2. You'll see a preview of the data in the file
+3. Click "Save Settings" to save the connection
+
+<img src="https://placehold.co/800x300?text=Verify+and+confirm+connection" alt="Verify and confirm connection" />
+</StepItem>
+</Step>
+
+### File Structure and Required Fields
+
+The Google Sheets file should include the following fields:
+
+| Column Name | Description | Required |
+|-----------|--------|-------|
+| **Product Name** | Full product name | Yes |
+| **Price** | Regular product price | Yes |
+| **Sale Price** | Sale price (optional) | No |
+| **Main Image** | URL to the main image | Yes |
+| **SKU** | Unique catalog number | No |
+| **Categories** | List of categories separated by commas | No |
+| **Tags** | List of tags separated by commas | No |
+| **Detailed Description** | Full product description | No |
+| **Short Description** | Product summary | No |
+| **Type** | Product type (simple, variable, etc.) | Yes |
+| **Status** | Product status (publish, draft, etc.) | No |
+| **Stock** | Available stock quantity | No |
+
+<Note title="Tip" type="info">
+The example file includes all these columns already defined with examples for demonstration.
+</Note>
+
+### Support for Product Variations
+
+To import products with variations, the file should also include:
+
+1. **Type Column** with the value "variable product" for the parent product
+2. **Attribute Columns** - columns for each attribute with the suffix "(a)" - for example: "Color (a)"
+3. **Variation Rows** - each variation appears in a separate row with:
+   - "Type" column with the value "variation"
+   - Parent product name in "Product Name"
+   - Specific attribute values for the variation
+
+<img src="https://placehold.co/800x300?text=Variations+in+Google+Sheets" alt="Variations in Google Sheets" />
+
+<Note title="Important" type="warning">
+The parent product and its variations must appear in sequence in the file, with the parent first followed by all its variations.
+</Note>
+
+### Synchronizing Data Between Google Sheets and the Site
+
+<Step>
+<StepItem title="Update the Site from the File">
+
+After editing data in the file:
+1. Open the Google Sheets file
+2. Click on the "WhizManage" menu
+3. Select the "Update Site" option
+4. The script will automatically send the changes to the site
+
+<img src="https://placehold.co/800x300?text=Update+site+from+Google+Sheets" alt="Update site from Google Sheets" />
+</StepItem>
+
+<StepItem title="Update the File from the Site">
+
+For reverse synchronization (from site to file):
+1. Open the Google Sheets file
+2. Click on the "WhizManage" menu
+3. Select the "Update File" option
+4. The script will pull the latest data from the site
+
+<img src="https://placehold.co/800x300?text=Update+file+from+site" alt="Update file from site" />
+
+<Note title="Tip" type="info">
+Update the file before significant editing to ensure you're working with the most current data.
+</Note>
+</StepItem>
+</Step>
+
+### Tips for Efficient Work with Google Sheets
+
+1. **Data Organization**
+   - Use different colors to classify product types
+   - Set up separate sheets for different categories
+   - Use comments for additional metadata
+
+2. **Backup and Safety**
+   - Create periodic copies of the file
+   - Use Google Sheets version history to view changes
+   - Maintain appropriate access permissions
+
+3. **Efficiency**
+   - Use formulas for automatic price calculations
+   - Set up conditional formatting to identify issues
+   - Use filtering and sorting for better navigation
+
+<Note title="Important" type="warning">
+Remember that changes in the Google Sheets file will not appear on the site automatically until you run the "Update Site" action.
+</Note>
