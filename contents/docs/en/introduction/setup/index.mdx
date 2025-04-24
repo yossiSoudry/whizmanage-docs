@@ -1,80 +1,118 @@
 ---
-title: Setup
-description: Setting up and configuring your documentation project
-keywords:
-  ["setup", "configuration", "layout", "Google", "SEO", "nextjs", "documents"]
+title: Initial Settings
+description: Guide for configuring the system after installation, including customizing the user interface and product table
+keywords: ["settings", "product table", "user interface", "columns", "theme"]
 ---
 
-Setting up your new documentation project is straightforward. Most of the essential project settings can be configured within the `settings` folder.
+## Initial Settings
 
-## Settings
+After installing and activating the WhizManage plugin, you can customize the system according to your personal preferences. This guide will help you configure the interface to suit your needs.
 
-This section provides the core settings for your documentation site, such as defining the site's URL, site icon and title.
+### Choosing a Theme
 
-```tsx showLineNumbers
-export const url = ""                 // The URL for your documentation site
-export const siteicon = ""            // Icon displayed next to the site name in the header
-export const sitename = ""            // Title of your documentation site
-```
+WhizManage allows you to choose between different themes for the user interface:
 
-## Google Tags
+<Step>
+<StepItem title="Changing the Theme">
 
-This section allows you to integrate Google Tag Manager into your documentation project. You can add your GTM code and configure whether it's connected.
+1. Click on your user image in the top corner of the interface
+2. In the dropdown menu, select "Theme"
+3. Choose one of the following options:
+   - **Light** - interface with light colors
+   - **Dark** - interface with dark colors
+   - **System** - automatic adjustment according to your system settings
 
-```tsx showLineNumbers
-export const gtm = ""                 // Add your Google Tag Manager code here
-export const gtmconnected = true      // Set to true if GTM is connected, otherwise set to false
-```
+<img src="https://placehold.co/800x300?text=Theme+Selection" alt="Theme Selection" />
 
-## Search Engine
+<Note title="Tip" type="info">
+The theme change takes effect immediately and is saved automatically - no need to click "Save".
+</Note>
+</StepItem>
+</Step>
 
-Configure essential SEO settings to ensure your documentation site is optimized for search engines. This includes meta descriptions, keywords and social media sharing details like images and alt text.
+### Customizing the Product Table
 
-```tsx showLineNumbers
-export const description = ""         // Description of your documentation site for SEO
-export const keywords = ["", ""]      // List of SEO keywords for your documentation site
-export const urlimage = ""            // The URL of the image used when sharing on social media)
-export const imagealt = ""            // Alt text for shared images, helpful for screen readers
-export const twitterhandle = ""       // Your company’s Twitter handle for social sharing
-```
+The product table is the heart of the system and can be fully customized to suit your needs:
 
-## Footer Branding
+<Step>
+<StepItem title="Customizing Table Columns">
 
-The footer settings allow you to customize the company information displayed at the bottom of the site. You can add the company name and the URL that the name will link to.
+1. Open the main product table
+2. Click the "+" (plus) button in the top corner of the table
+3. In the window that opens, you can:
+   - Check or uncheck columns to show/hide them
+   - Change the order of columns by dragging and dropping within the window
+   - Filter columns using the "Find column to show/hide" search field
+4. After making your desired changes, click "Save as default" to save the settings for future use
 
-```tsx showLineNumbers
-export const companyname = ""         // The company name displayed in the copyright section
-export const companylink = ""         // The URL your company name should link to
-```
+<img src="https://placehold.co/800x300?text=Column+Configuration" alt="Column Configuration" />
 
-## General Layout
+<Note title="Important" type="info">
+Clicking "Save as default" will save the current column configuration as your default setting. If you want to return to the original settings, you can click "Reset Table".
+</Note>
+</StepItem>
 
-The layout settings control the appearance and functionality of various elements of the documentation site, such as branding, the right sidebar, feedback options, table of contents, and scroll-to-top functionality.
+<StepItem title="Changing Column Size and Order">
 
-```tsx showLineNumbers
-export const branding = true          // Set to true to display our branding elements
-export const rightsidebar = true      // Set to true to enable the right sidebar with feedback, table of contents and scroll-to-top
-export const feedbackedit = true      // Control to enable/disable feedback on GitHub
-export const tableofcontent = true    // Control to enable/disable the generated table of contents
-export const totopscroll = true       // Control to enable/disable scroll-to-top button
-```
+In addition to the settings window, you can make further adjustments directly in the table:
 
-## Github Control
+1. **Change column width** - drag the border between column headers to change the column width
+2. **Change column order** - drag the column header to the desired position
+3. **Quick column hiding** - click the small arrow next to the column header and select "Hide"
+4. **Table sorting** - click on a column header to sort by that column, or click the small arrow and select "Asc" (ascending) or "Desc" (descending)
 
-If your MDX files are hosted on GitHub, you can configure the project to load documents directly from there. This option can be useful for syncing documentation updates directly with your repository.
+<img src="https://placehold.co/800x300?text=Column+Resizing+and+Hiding" alt="Column Resizing and Hiding" />
 
-```tsx showLineNumbers
-export const loadfromgithub = false   // Set to true to load your MDX documents directly from GitHub
-```
+<Note title="Tip" type="info">
+These changes are automatically saved for the current user. However, to save the changes permanently as default, remember to click the "Save as default" button in the column settings window.
+</Note>
+</StepItem>
 
-## Project Structure
+<StepItem title="Setting Rows Per Page">
 
-<CardGrid>
-  <Card
-    title="Navigation"
-    href="/docs/navigation"
-    icon="alignJustify"
-    variant="small"
-    description="Creating your navigation"
-  />
-</CardGrid>
+You can adjust the number of products displayed on each page of the table:
+
+1. At the bottom of the table, find the rows per page selector
+2. Choose the desired number from the dropdown list (typically options are 10, 25, 50, 100)
+3. The selection is saved automatically and will apply to the table immediately
+
+<img src="https://placehold.co/800x300?text=Rows+Per+Page+Setting" alt="Rows Per Page Setting" />
+</StepItem>
+</Step>
+
+### Testing and Further Customization
+
+After completing the initial settings, it's recommended to perform a brief test of the system:
+
+<Step>
+<StepItem title="System Testing">
+
+1. Verify that all products are properly displayed in the table
+2. Try editing a simple product to test the editing functionality
+3. Try creating a new product (available in all versions)
+4. Test the filtering and search functionality in the table
+
+<Note title="Note" type="info">
+In the basic (free) version, some features are limited. Features available only in Pro versions include: advanced variation editing, bulk product editing, spreadsheet-style editing, custom fields, advanced filtering, and more.
+</Note>
+</StepItem>
+</Step>
+
+## Features Available in Different Versions
+
+<Note title="Information" type="info">
+Below is a list of features not included in the basic free version:
+
+- Add product variations
+- Add new product with advanced features
+- Drag & drop columns
+- Edit All - Like in spreadsheets
+- Bulk editing
+- Add and edit customized fields
+- Full support
+- Personalized columns
+- Advanced filters
+- New features as added
+</Note>
+
+For more information about the features available in each version and upgrade options, visit the [WhizManage](https://whizmanage.com) website or contact support at support@whizmanage.com.

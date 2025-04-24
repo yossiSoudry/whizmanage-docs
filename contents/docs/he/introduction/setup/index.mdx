@@ -1,80 +1,118 @@
 ---
-title: Setup
-description: Setting up and configuring your documentation project
-keywords:
-  ["setup", "configuration", "layout", "Google", "SEO", "nextjs", "documents"]
+title: הגדרות ראשוניות
+description: מדריך להגדרת המערכת לאחר ההתקנה, כולל התאמת ממשק המשתמש וטבלת המוצרים
+keywords: ["הגדרות", "טבלת מוצרים", "ממשק משתמש", "עמודות", "ערכת נושא"]
 ---
 
-Setting up your new documentation project is straightforward. Most of the essential project settings can be configured within the `settings` folder.
+## הגדרות ראשוניות
 
-## Settings
+לאחר התקנת תוסף WhizManage והפעלתו, תוכלו להתאים את המערכת לפי העדפותיכם האישיות. מדריך זה יעזור לכם להגדיר את הממשק באופן המתאים לצרכים שלכם.
 
-This section provides the core settings for your documentation site, such as defining the site's URL, site icon and title.
+### בחירת ערכת נושא
 
-```tsx showLineNumbers
-export const url = ""                 // The URL for your documentation site
-export const siteicon = ""            // Icon displayed next to the site name in the header
-export const sitename = ""            // Title of your documentation site
-```
+WhizManage מאפשר לכם לבחור בין ערכות נושא שונות לממשק המשתמש:
 
-## Google Tags
+<Step>
+<StepItem title="שינוי ערכת הנושא">
 
-This section allows you to integrate Google Tag Manager into your documentation project. You can add your GTM code and configure whether it's connected.
+1. לחצו על תמונת המשתמש בפינה העליונה של הממשק
+2. בתפריט שנפתח, בחרו באפשרות "Theme" (ערכת נושא)
+3. בחרו באחת מהאפשרויות הבאות:
+   - **Light** (בהיר) - ממשק בצבעים בהירים
+   - **Dark** (כהה) - ממשק בצבעים כהים
+   - **System** (מערכת) - התאמה אוטומטית לפי הגדרות המערכת שלכם
 
-```tsx showLineNumbers
-export const gtm = ""                 // Add your Google Tag Manager code here
-export const gtmconnected = true      // Set to true if GTM is connected, otherwise set to false
-```
+<img src="https://placehold.co/800x300?text=Theme+Selection" alt="בחירת ערכת נושא" />
 
-## Search Engine
+<Note title="טיפ" type="info">
+השינוי בערכת הנושא מתבצע מיידית ונשמר אוטומטית - אין צורך ללחוץ על "שמור".
+</Note>
+</StepItem>
+</Step>
 
-Configure essential SEO settings to ensure your documentation site is optimized for search engines. This includes meta descriptions, keywords and social media sharing details like images and alt text.
+### התאמת טבלת המוצרים
 
-```tsx showLineNumbers
-export const description = ""         // Description of your documentation site for SEO
-export const keywords = ["", ""]      // List of SEO keywords for your documentation site
-export const urlimage = ""            // The URL of the image used when sharing on social media)
-export const imagealt = ""            // Alt text for shared images, helpful for screen readers
-export const twitterhandle = ""       // Your company’s Twitter handle for social sharing
-```
+טבלת המוצרים היא לב המערכת, והיא ניתנת להתאמה מלאה לפי צרכיכם:
 
-## Footer Branding
+<Step>
+<StepItem title="התאמת עמודות הטבלה">
 
-The footer settings allow you to customize the company information displayed at the bottom of the site. You can add the company name and the URL that the name will link to.
+1. פתחו את טבלת המוצרים הראשית
+2. לחצו על כפתור ה"+" (פלוס) בפינה העליונה של הטבלה
+3. בחלון שנפתח תוכלו:
+   - לסמן או לבטל סימון של עמודות להצגה/הסתרה
+   - לשנות את סדר העמודות באמצעות גרירה ושחרור בתוך החלון
+   - לסנן עמודות באמצעות שדה החיפוש "Find column to show/hide"
+4. לאחר ביצוע השינויים הרצויים, לחצו על "Save as default" כדי לשמור את ההגדרות לשימוש עתידי
 
-```tsx showLineNumbers
-export const companyname = ""         // The company name displayed in the copyright section
-export const companylink = ""         // The URL your company name should link to
-```
+<img src="https://placehold.co/800x300?text=Column+Configuration" alt="הגדרת עמודות" />
 
-## General Layout
+<Note title="חשוב" type="info">
+לחיצה על "Save as default" תשמור את תצורת העמודות הנוכחית כהגדרת ברירת המחדל שלכם. אם תרצו לחזור להגדרות המקוריות, תוכלו ללחוץ על "Reset Table".
+</Note>
+</StepItem>
 
-The layout settings control the appearance and functionality of various elements of the documentation site, such as branding, the right sidebar, feedback options, table of contents, and scroll-to-top functionality.
+<StepItem title="שינוי גודל וסדר העמודות">
 
-```tsx showLineNumbers
-export const branding = true          // Set to true to display our branding elements
-export const rightsidebar = true      // Set to true to enable the right sidebar with feedback, table of contents and scroll-to-top
-export const feedbackedit = true      // Control to enable/disable feedback on GitHub
-export const tableofcontent = true    // Control to enable/disable the generated table of contents
-export const totopscroll = true       // Control to enable/disable scroll-to-top button
-```
+בנוסף לחלון ההגדרות, תוכלו לבצע התאמות נוספות ישירות בטבלה:
 
-## Github Control
+1. **שינוי רוחב עמודה** - גררו את הגבול בין כותרות העמודות כדי לשנות את רוחב העמודה
+2. **שינוי סדר העמודות** - גררו את כותרת העמודה למיקום הרצוי
+3. **הסתרת עמודה מהירה** - לחצו על החץ הקטן ליד כותרת העמודה ובחרו "Hide" (הסתר)
+4. **מיון הטבלה** - לחצו על כותרת העמודה למיון לפי העמודה הזו, או לחצו על החץ הקטן ובחרו "Asc" (עולה) או "Desc" (יורד)
 
-If your MDX files are hosted on GitHub, you can configure the project to load documents directly from there. This option can be useful for syncing documentation updates directly with your repository.
+<img src="https://placehold.co/800x300?text=Column+Resizing+and+Hiding" alt="שינוי גודל והסתרת עמודות" />
 
-```tsx showLineNumbers
-export const loadfromgithub = false   // Set to true to load your MDX documents directly from GitHub
-```
+<Note title="טיפ" type="info">
+שינויים אלו נשמרים אוטומטית עבור המשתמש הנוכחי. עם זאת, כדי שהשינויים ישמרו באופן קבוע כברירת מחדל, זכרו ללחוץ על כפתור "Save as default" בחלון הגדרות העמודות.
+</Note>
+</StepItem>
 
-## Project Structure
+<StepItem title="הגדרת מספר שורות בעמוד">
 
-<CardGrid>
-  <Card
-    title="Navigation"
-    href="/docs/navigation"
-    icon="alignJustify"
-    variant="small"
-    description="Creating your navigation"
-  />
-</CardGrid>
+תוכלו להתאים את מספר המוצרים המוצגים בכל עמוד של הטבלה:
+
+1. בחלק התחתון של הטבלה, חפשו את בורר מספר השורות בעמוד
+2. בחרו את המספר הרצוי מהרשימה הנפתחת (לרוב האפשרויות הן 10, 25, 50, 100)
+3. הבחירה נשמרת אוטומטית ותחול על הטבלה מיד
+
+<img src="https://placehold.co/800x300?text=Rows+Per+Page+Setting" alt="הגדרת מספר שורות בעמוד" />
+</StepItem>
+</Step>
+
+### בדיקה והתאמה נוספת
+
+לאחר השלמת ההגדרות הראשוניות, מומלץ לבצע בדיקה קצרה של המערכת:
+
+<Step>
+<StepItem title="בדיקת המערכת">
+
+1. ודאו שכל המוצרים מוצגים כראוי בטבלה
+2. נסו לערוך מוצר פשוט לבדיקת פונקציונליות העריכה
+3. התנסו ביצירת מוצר חדש (זמין בכל הגרסאות)
+4. בדקו את תפקוד הסינון והחיפוש בטבלה
+
+<Note title="הערה" type="info">
+בגרסה הבסיסית (החינמית) חלק מהתכונות מוגבלות. בין התכונות הזמינות רק בגרסאות ה-Pro: עריכת ווריאציות מתקדמת, עריכת מוצרים המונית, עריכה בסגנון גיליון אלקטרוני, שדות מותאמים אישית, סינון מתקדם ועוד.
+</Note>
+</StepItem>
+</Step>
+
+## תכונות הזמינות בגרסאות השונות
+
+<Note title="מידע" type="info">
+להלן רשימה של תכונות שאינן כלולות בגרסה הבסיסית החינמית:
+
+- הוספת ווריאציות מוצר
+- יצירת מוצר חדש עם תכונות מתקדמות
+- גרירה ושחרור של עמודות
+- עריכת הכל - בסגנון גיליון אלקטרוני
+- עריכה המונית
+- הוספה ועריכה של שדות מותאמים אישית
+- תמיכה מלאה
+- עמודות מותאמות אישית
+- סינון מתקדם
+- תכונות חדשות מתווספות
+</Note>
+
+למידע נוסף על התכונות הזמינות בכל גרסה ואפשרויות שדרוג, בקרו באתר [WhizManage](https://whizmanage.com) או פנו לתמיכה בכתובת support@whizmanage.com.

@@ -40,17 +40,17 @@ export const Documents: LocalizedPaths[] = [
       {
         title: {
           en: "Setup", 
-          he: "הגדרות"
+          he: "הגדרות ראשוניות"
         },
         href: "/setup",
       },
-      {
-        title: {
-          en: "Changelog",
-          he: "היסטוריית שינויים"  
-        },
-        href: "/changelog",
-      },
+      // {
+      //   title: {
+      //     en: "Changelog",
+      //     he: "היסטוריית שינויים"  
+      //   },
+      //   href: "/changelog",
+      // },
     ],
   },
   {
@@ -58,8 +58,8 @@ export const Documents: LocalizedPaths[] = [
   },
   {
     title: {
-      en: "Import",
-      he: "ייבוא"
+      en: "Import Products",
+      he: "ייבוא מוצרים"
     },
     href: "/import",
     heading: {
@@ -84,7 +84,7 @@ export const Documents: LocalizedPaths[] = [
       {
         title: {
           en: "Google Sheets Import", 
-          he: "ייבוא מ-Google Sheets"
+          he: "ייבוא מטבלת גוגל שיטס"
         },
         href: "/spreadsheet",
       },
