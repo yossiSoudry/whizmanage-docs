@@ -11,6 +11,11 @@ const baseUrl = Settings.metadataBase
 
 export const metadata: Metadata = {
   title: Settings.title,
+  icons: {
+    icon: '/icon.png',
+    apple: '/apple-icon.png',
+    shortcut: '/shortcut-icon.png'
+  },
   metadataBase: new URL(baseUrl),
   description: Settings.description,
   keywords: Settings.keywords,
