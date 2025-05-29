@@ -1,14 +1,21 @@
 ---
 title: ייבוא מ-Google Sheets
-description: "מדריך מפורט לייבוא וסנכרון מוצרים באמצעות Google Sheets"
+description: "מדריך לייבוא וסנכרון מוצרים באמצעות Google Sheets"
 keywords: ["Google Sheets", "ייבוא מוצרים", "סנכרון", "גיליונות אלקטרוניים"]
 ---
 
-## ייבוא וסנכרון מוצרים מ-Google Sheets
+## ייבוא מוצרים מ-Google Sheets
 
-מערכת WhizManage מציעה פתרון ייחודי לניהול מוצרים באמצעות Google Sheets, המאפשר לכם לייבא, לעדכן ולנהל את מוצרי החנות שלכם בקלות באמצעות ממשק מוכר וידידותי.
+מערכת WhizManage מאפשרת לכם לנהל מוצרים באמצעות Google Sheets בקלות וביעילות.
 
-### יתרונות השימוש ב-Google Sheets
+## תכונות חדשות 🆕
+
+- **בחירת מוצרים**: בחרו אלו מוצרים יופיעו בקובץ
+- **סינון קטגוריות**: סינון מהיר לפי קטגוריות
+- **שדות ACF**: תמיכה ב-Advanced Custom Fields
+- **שדות JetEngine**: תמיכה בשדות JetEngine מותאמים
+
+## יתרונות Google Sheets
 
 <Step>
 <StepItem title="עבודה שיתופית">
@@ -42,25 +49,32 @@ Google Sheets מאפשר:
 </StepItem>
 </Step>
 
-### הגדרת קובץ Google Sheets לייבוא
+## הגדרת הקובץ
+
+### בחירת מוצרים
+
+<Step>
+<StepItem title="בחירת מוצרים לייבוא">
+
+1. נווטו לניהול המוצרים
+2. לחצו על "בחירת מוצרים לייבוא"
+3. השתמשו בחיפוש וסינון לבחירה
+4. לחצו על "שמור הגדרות"
+
+<Note title="טיפ" type="info">
+ניתן לסנן לפי קטגוריות ולחפש לפי שם או מזהה.
+</Note>
+</StepItem>
+</Step>
+
+### יצירת קובץ Google Sheets
 
 <Step>
 <StepItem title="צור עותק של קובץ הדוגמה">
 
 1. פתחו את [קובץ הדוגמה](https://docs.google.com/spreadsheets/d/example) המצורף
 2. לחצו על "File" > "Make a copy"
-3. שמרו את הקובץ בחשבון Google שלכם
-
-<Note title="טיפ" type="info">
-קובץ הדוגמה כבר כולל את כל העמודות הנדרשות ואת סקריפט ההתממשקות.
-</Note>
-</StepItem>
-
-<StepItem title="מתן שם לקובץ">
-
-לשם תקינות הסנכרון:
-1. תנו לקובץ שם זהה ל-URL האתר שלכם
-2. לדוגמה: אם האתר שלכם הוא 'mystore.com', קראו לקובץ 'mystore.com'
+3. תנו לקובץ שם זהה ל-URL האתר שלכם (לדוגמה: 'mystore.com')
 
 <Note title="חשוב" type="warning">
 התאמת השם לדומיין האתר היא קריטית לפעולת ההתממשקות האוטומטית.
@@ -70,7 +84,7 @@ Google Sheets מאפשר:
 <StepItem title="הגדרת הרשאות שיתוף">
 
 1. לחצו על כפתור "שיתוף" (Share) בפינה העליונה
-2. הגדירו את הקובץ ל"כל מי שיש לו את הקישור יכול לצפות" (Anyone with the link can view)
+2. הגדירו את הקובץ ל"כל מי שיש לו את הקישור יכול לצפות"
 3. העתיקו את הקישור שיוצג
 
 <img src="https://placehold.co/800x300?text=Share+settings" alt="הגדרות שיתוף" />
@@ -78,7 +92,6 @@ Google Sheets מאפשר:
 
 <StepItem title="הפעלת סקריפט WhizManage">
 
-לאחר הגדרת הקובץ:
 1. חפשו בתפריט העליון לשונית חדשה בשם "WhizManage"
 2. לחצו על "WhizManage" > "Update File"
 3. בפעם הראשונה תתבקשו לאשר הרשאות לסקריפט
@@ -89,7 +102,7 @@ Google Sheets מאפשר:
 </StepItem>
 </Step>
 
-### חיבור קובץ ה-Google Sheets למערכת
+### חיבור הקובץ למערכת
 
 <Step>
 <StepItem title="פתיחת ממשק הייבוא">
@@ -102,33 +115,21 @@ Google Sheets מאפשר:
 <img src="https://placehold.co/800x300?text=Import+interface" alt="ממשק ייבוא" />
 </StepItem>
 
-<StepItem title="הזנת קישור לקובץ Google Sheets">
+<StepItem title="הזנת קישור וחיבור">
 
-1. הדביקו את הקישור שהעתקתם מהשלב הקודם
-2. וודאו שהקישור מכיל את מזהה הקובץ הנכון
-3. לחצו על "בדוק חיבור" לאימות תקינות הקישור
-
-<img src="https://placehold.co/800x300?text=Enter+Google+Sheets+link" alt="הזנת קישור לקובץ" />
+1. הדביקו את הקישור שהעתקתם
+2. לחצו על "בדוק חיבור" לאימות תקינות הקישור
+3. לחצו על "שמור הגדרות" לשמירת החיבור
 
 <Note title="טיפ" type="info">
 הקישור צריך להיות בפורמט: `https://docs.google.com/spreadsheets/d/[FILE_ID]/edit?usp=sharing`
 </Note>
 </StepItem>
-
-<StepItem title="אימות ואישור החיבור">
-
-לאחר בדיקת החיבור:
-1. המערכת תציג הודעת אישור אם החיבור תקין
-2. תוכלו לראות תצוגה מקדימה של הנתונים בקובץ
-3. לחצו על "שמור הגדרות" לשמירת החיבור
-
-<img src="https://placehold.co/800x300?text=Verify+and+confirm+connection" alt="אימות ואישור החיבור" />
-</StepItem>
 </Step>
 
-### מבנה הקובץ והשדות הנדרשים
+## מבנה הקובץ
 
-קובץ ה-Google Sheets צריך לכלול את השדות הבאים:
+### שדות בסיסיים
 
 | שם העמודה | תיאור | חובה |
 |-----------|--------|-------|
@@ -145,28 +146,42 @@ Google Sheets מאפשר:
 | **סטטוס** | מצב המוצר (פרסום, טיוטה, וכו') | לא |
 | **מלאי** | כמות המלאי הזמין | לא |
 
-<Note title="טיפ" type="info">
-קובץ הדוגמה כולל את כל העמודות הללו מוגדרות מראש עם דוגמאות להמחשה.
+### שדות מותאמים 🔧
+
+המערכת תומכת בשדות מותאמים:
+
+#### שדות ACF
+- **זיהוי אוטומטי**: המערכת מזהה שדות ACF קיימים
+- **קידומת**: שדות ACF מופיעים עם `acf_`
+- **סוגי שדות**: טקסט, מספרים, תאריכים, בוליאן
+
+#### שדות JetEngine
+- **תמיכה מלאה**: כל שדות JetEngine נתמכים
+- **קידומת**: שדות JetEngine מופיעים עם `jet_`
+
+#### דוגמה למבנה
+
+| שם מוצר | מחיר | acf_warranty | jet_brand |
+|----------|------|-------------|-----------|
+| iPhone 15 | 3999 | 24 חודשים | Apple |
+| Samsung S24 | 3499 | 18 חודשים | Samsung |
+
+<Note title="הערה" type="info">
+השדות המותאמים מתווספים אוטומטית בהתאם למוצרים הנבחרים.
 </Note>
 
-### תמיכה בווריאציות מוצרים
+### ווריאציות מוצרים
 
-לייבוא מוצרים עם ווריאציות, הקובץ צריך לכלול גם:
-
-1. **עמודת סוג** עם הערך "מוצר עם וריאציות" למוצר האב
-2. **עמודות תכונות** - עמודות עבור כל תכונה עם סיומת "(a)" - לדוגמה: "צבע (a)"
-3. **שורות לווריאציות** - כל ווריאציה מופיעה בשורה נפרדת עם:
-   - עמודת "סוג" עם הערך "וריאציה"
-   - שם המוצר האב ב"שם מוצר"
-   - ערכי התכונות הספציפיות של הווריאציה
-
-<img src="https://placehold.co/800x300?text=Variations+in+Google+Sheets" alt="ווריאציות ב-Google Sheets" />
+לייבוא מוצרים עם ווריאציות:
+1. **עמודת סוג** עם הערך "מוצר עם וריאציות"
+2. **עמודות תכונות** עם סיומת "(a)"
+3. **שורות לווריאציות** - כל ווריאציה בשורה נפרדת
 
 <Note title="חשוב" type="warning">
-המוצר האב והווריאציות שלו צריכים להופיע ברצף בקובץ, כאשר האב מופיע ראשון ואחריו כל הווריאציות השייכות אליו.
+המוצר האב והווריאציות צריכים להופיע ברצף בקובץ.
 </Note>
 
-### סנכרון נתונים בין Google Sheets לאתר
+## סנכרון נתונים
 
 <Step>
 <StepItem title="עדכון האתר מהקובץ">
@@ -196,22 +211,17 @@ Google Sheets מאפשר:
 </StepItem>
 </Step>
 
-### טיפים לעבודה יעילה עם Google Sheets
+## טיפים ופתרון בעיות
 
-1. **ארגון נתונים**
-   - השתמשו בצבעים שונים לסיווג סוגי מוצרים
-   - קבעו גיליונות נפרדים לקטגוריות שונות
-   - השתמשו בהערות ל-metadata נוסף
+### ארגון וגיבוי
+- השתמשו בצבעים לסיווג מוצרים
+- צרו עותקים תקופתיים של הקובץ
+- השתמשו בהיסטוריית גרסאות Google Sheets
 
-2. **גיבוי ובטיחות**
-   - צרו עותקים תקופתיים של הקובץ
-   - השתמשו בהיסטוריית הגרסאות של Google Sheets לצפייה בשינויים
-   - הקפידו על הרשאות גישה מתאימות
-
-3. **יעילות**
-   - השתמשו בנוסחאות לחישוב מחירים אוטומטי
-   - הגדירו תנאי עיצוב (conditional formatting) לזיהוי בעיות
-   - השתמשו בסינון וסידור להתמצאות טובה יותר
+### שגיאות נפוצות
+- **"לא ניתן לגשת לקובץ"**: ודאו שהקובץ מושתף לצפייה ציבורית
+- **"שדה ACF לא מזוהה"**: ודאו שהשדה קיים ופעיל
+- **"רשימת מוצרים לא נשמרה"**: בדקו את החיבור לאינטרנט
 
 <Note title="חשוב" type="warning">
 זכרו שהשינויים בקובץ ה-Google Sheets לא יופיעו באתר באופן אוטומטי עד שתריצו את פעולת "Update Site".
