@@ -150,21 +150,18 @@ Link format: `https://docs.google.com/spreadsheets/d/[FILE_ID]/edit?usp=sharing`
 
 The system supports custom fields:
 
-#### ACF Fields
-- **Auto-detection**: System detects existing ACF fields
-- **Prefix**: ACF fields appear with `acf_` prefix
+#### ACF / JetEngine Fields
+- **Auto-detection**: System automatically detects existing ACF fields
+- **Suffix**: Custom fields appear with suffix "(m)"
+- **Attributes**: Custom field attributes receive suffix "(a)"
 - **Field types**: Text, numbers, dates, boolean
-
-#### JetEngine Fields
-- **Full support**: All JetEngine fields supported
-- **Prefix**: JetEngine fields appear with `jet_` prefix
 
 #### Structure Example
 
-| Product Name | Price | acf_warranty | jet_brand |
-|----------|------|-------------|-----------|
-| iPhone 15 | 3999 | 24 months | Apple |
-| Samsung S24 | 3499 | 18 months | Samsung |
+| Product Name | Price | Color (a) | acf_warranty (m) | jet_brand (m) |
+|----------|------|-------------|-----------|----------|
+| iPhone 15 | 3999 | Silver | 24 months | Apple |
+| Samsung S24 | 3499 | Black | 18 months | Samsung |
 
 <Note title="Note" type="info">
 Custom fields are added automatically based on selected products.
