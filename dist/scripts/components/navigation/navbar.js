@@ -16,7 +16,7 @@ export function NavMenu({ isSheet = false, lang }) {
     return (_jsx(_Fragment, { children: Navigations.map((item) => {
             // עדכון הניתוב להכיל את השפה אם זה לא קישור חיצוני
             const href = item.external ? item.href : `/${lang}${item.href}`;
-            const Comp = (_jsxs(Anchor, { activeClassName: "font-bold text-primary", absolute: true, className: "flex items-center gap-1 text-sm rtl:flex-row-reverse", href: href, target: item.external ? "_blank" : undefined, rel: item.external ? "noopener noreferrer" : undefined, children: [item.title[lang], " ", item.external && (_jsx(LuArrowUpRight, { className: "w-3 h-3 align-super rtl:-rotate-90", strokeWidth: 3 }))] }, item.title + href));
+            const Comp = (_jsxs(Anchor, { activeClassName: "font-bold text-primary", absolute: true, className: "flex items-center gap-1 text-sm rtl:flex-row-reverse hover:text-primary transition-colors duration-200", href: href, target: item.external ? "_blank" : undefined, rel: item.external ? "noopener noreferrer" : undefined, children: [item.title[lang], " ", item.external && (_jsx(LuArrowUpRight, { className: "w-3 h-3 align-super rtl:-rotate-90", strokeWidth: 3 }))] }, item.title + href));
             return isSheet ? (_jsx(SheetClose, { asChild: true, children: Comp }, item.title + href)) : (Comp);
         }) }));
 }
