@@ -2,7 +2,7 @@ import { LuAlignLeft } from "react-icons/lu"
 
 import { Button } from "@/components/ui/button"
 import { DialogTitle } from "@/components/ui/dialog"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { RTLScrollArea } from "@/components/ui/rtl-scroll-area"
 import {
   Sheet,
   SheetClose,
@@ -19,8 +19,6 @@ import { SupportedLanguage } from "@/app/[lang]/layout"
 type SidebarProps = {
   lang: SupportedLanguage
 }
-
-import { RTLScrollArea } from "@/components/ui/rtl-scroll-area"
 
 export function Sidebar({ lang }: SidebarProps) {
   return (
