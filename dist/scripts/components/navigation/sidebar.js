@@ -2,11 +2,11 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { LuAlignLeft } from "react-icons/lu";
 import { Button } from "@/components/ui/button";
 import { DialogTitle } from "@/components/ui/dialog";
+import { RTLScrollArea } from "@/components/ui/rtl-scroll-area";
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTrigger, } from "@/components/ui/sheet";
 import { Logo } from "@/components/navigation/logo";
 import { NavMenu } from "@/components/navigation/navbar";
 import PageMenu from "@/components/navigation/pagemenu";
-import { RTLScrollArea } from "@/components/ui/rtl-scroll-area";
 export function Sidebar({ lang }) {
     return (_jsx("aside", { className: "md:flex hidden flex-[1] !w-48 !min-w-48 !max-w-48 sticky top-16 flex-col h-[94.5vh] overflow-y-auto", dir: lang === "he" ? "rtl" : "ltr", children: _jsx(RTLScrollArea, { className: "py-4", isRTL: lang === "he", children: _jsx(PageMenu, { lang: lang }) }) }));
 }
