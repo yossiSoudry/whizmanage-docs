@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { LuChevronDown, LuChevronRight } from "react-icons/lu"
 
 import { Paths } from "@/lib/pageroutes"
@@ -43,6 +43,7 @@ function isRoute(
 
 export default function SubLink(props: SubLinkProps) {
   const path = usePathname()
+  const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const isRTL = props.lang === 'he'
 
@@ -54,8 +55,25 @@ export default function SubLink(props: SubLinkProps) {
 
   const { title, href, items, noLink, level, isSheet, lang } = props
 
+  // פונקציה לטיפול בלחיצה על הלינק הראשי
+  const handleMainLinkClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    
+    // ניווט ללינק
+    router.push(href)
+    
+    // פתיחה/סגירה של סאבלינקים
+    if (items && items.length > 0) {
+      setIsOpen(!isOpen)
+    }
+  }
+
   const Comp = (
-    <Anchor activeClassName="text-fuchsia-500 text-sm font-bold" href={href}>
+    <Anchor 
+      activeClassName="text-fuchsia-500 text-sm font-bold" 
+      href={href}
+      onClick={handleMainLinkClick}
+    >
       {title}
     </Anchor>
   )
@@ -67,7 +85,12 @@ export default function SubLink(props: SubLinkProps) {
       Comp
     )
   ) : (
-    <h2 className="font-medium text-primary sm:text-sm">{title}</h2>
+    <h2 
+      className="font-medium text-primary sm:text-sm cursor-pointer"
+      onClick={() => items && items.length > 0 && setIsOpen(!isOpen)}
+    >
+      {title}
+    </h2>
   )
 
   if (!items) {
@@ -118,7 +141,6 @@ export default function SubLink(props: SubLinkProps) {
               isRTL ? "items-end border-r border-l-0 pr-4" : "items-start pl-4",
               level > 0 && cn(
                 isRTL ? "mr-1 pr-4" : "ml-1 pl-4",
-                // "border-l"
               )
             )}
           >

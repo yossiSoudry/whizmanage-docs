@@ -166,6 +166,58 @@ export const Documents = [
     {
         spacer: true,
     },
+    {
+        spacer: true,
+    },
+    {
+        spacer: true,
+    },
+    {
+        spacer: true,
+    },
+    {
+        spacer: true,
+    },
+    {
+        spacer: true,
+    },
+        {
+        title: {
+            en: "Variations",
+            he: "ווריאציות"
+        },
+        href: "/variations",
+        items: [
+            {
+                title: {
+                    en: "Attributes",
+                    he: "תכונות"
+                },
+                href: "/attributes",
+            },
+            {
+                title: {
+                    en: "Options",
+                    he: "אופציות"
+                },
+                href: "/options",
+            },
+            {
+                title: {
+                    en: "Create variations",
+                    he: "יצירת ווריאציות"
+                },
+                href: "/creation",
+            },
+            {
+                title: {
+                    en: "Manage variations",
+                    he: "ניהול ווריאציות"
+                },
+                href: "/management",
+            },
+        ],
+    },
     // {
     //   title: {
     //     en: "Markdown",

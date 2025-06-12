@@ -28,7 +28,7 @@ export default function PageMenu({ isSheet = false, lang }: PageMenuProps) {
   if (!pathname.startsWith(`/${lang}/docs`)) return null
 
   return (
-    <div className="flex flex-col gap-3.5 mt-5 pb-6">
+    <div className="flex flex-col gap-3.5 mt-5 pb-6 px-4">
       {routes.map((item, index) => {
         if ("spacer" in item) {
           return (
