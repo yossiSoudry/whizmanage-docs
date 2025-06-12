@@ -1,6 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { LuChevronDown, LuChevronRight } from "react-icons/lu";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,7 @@ function isRoute(item) {
 }
 export default function SubLink(props) {
     const path = usePathname();
+    const router = useRouter();
     const [isOpen, setIsOpen] = useState(false);
     const isRTL = props.lang === 'he';
     useEffect(() => {
@@ -20,8 +21,18 @@ export default function SubLink(props) {
         }
     }, [path, props.href]);
     const { title, href, items, noLink, level, isSheet, lang } = props;
-    const Comp = (_jsx(Anchor, { activeClassName: "text-fuchsia-500 text-sm font-bold", href: href, children: title }));
-    const titleOrLink = !noLink ? (isSheet ? (_jsx(SheetClose, { asChild: true, children: Comp })) : (Comp)) : (_jsx("h2", { className: "font-medium text-primary sm:text-sm", children: title }));
+    // פונקציה לטיפול בלחיצה על הלינק הראשי
+    const handleMainLinkClick = (e) => {
+        e.preventDefault();
+        // ניווט ללינק
+        router.push(href);
+        // פתיחה/סגירה של סאבלינקים
+        if (items && items.length > 0) {
+            setIsOpen(!isOpen);
+        }
+    };
+    const Comp = (_jsx(Anchor, { activeClassName: "text-fuchsia-500 text-sm font-bold", href: href, onClick: handleMainLinkClick, children: title }));
+    const titleOrLink = !noLink ? (isSheet ? (_jsx(SheetClose, { asChild: true, children: Comp })) : (Comp)) : (_jsx("h2", { className: "font-medium text-primary sm:text-sm cursor-pointer", onClick: () => items && items.length > 0 && setIsOpen(!isOpen), children: title }));
     if (!items) {
         return (_jsx("div", { className: cn("flex flex-col text-sm hover:underline", isRTL && "text-right"), children: titleOrLink }));
     }

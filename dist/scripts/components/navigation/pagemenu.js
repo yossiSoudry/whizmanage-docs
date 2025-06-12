@@ -18,7 +18,7 @@ export default function PageMenu({ isSheet = false, lang }) {
     }, [lang]);
     if (!pathname.startsWith(`/${lang}/docs`))
         return null;
-    return (_jsx("div", { className: "flex flex-col gap-3.5 mt-5 pb-6", children: routes.map((item, index) => {
+    return (_jsx("div", { className: "flex flex-col gap-3.5 mt-5 pb-6 px-4", children: routes.map((item, index) => {
             if ("spacer" in item) {
                 return (_jsx("div", { className: "my-2 mr-3" }, `spacer-${index}`));
             }
