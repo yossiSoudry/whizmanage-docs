@@ -22,32 +22,32 @@ export const Documents: LocalizedPaths[] = [
   {
     title: {
       en: "Introduction",
-      he: "מבוא"
+      he: "מבוא",
     },
-    href: "/introduction", 
+    href: "/introduction",
     heading: {
       en: "Getting started",
-      he: "צעדים ראשונים"
+      he: "צעדים ראשונים",
     },
     items: [
       {
         title: {
           en: "Installation",
-          he: "התקנה"
+          he: "התקנה",
         },
         href: "/installation",
       },
       {
         title: {
-          en: "Setup", 
-          he: "הגדרות ראשוניות"
+          en: "Setup",
+          he: "הגדרות ראשוניות",
         },
         href: "/setup",
       },
       // {
       //   title: {
       //     en: "Changelog",
-      //     he: "היסטוריית שינויים"  
+      //     he: "היסטוריית שינויים"
       //   },
       //   href: "/changelog",
       // },
@@ -59,12 +59,12 @@ export const Documents: LocalizedPaths[] = [
   {
     title: {
       en: "Import Products",
-      he: "ייבוא מוצרים"
+      he: "ייבוא מוצרים",
     },
     href: "/import",
     heading: {
       en: "Documents",
-      he: "מסמכים"
+      he: "מסמכים",
     },
     items: [
       // {
@@ -76,35 +76,35 @@ export const Documents: LocalizedPaths[] = [
       // },
       // {
       //   title: {
-      //     en: "Import Process", 
+      //     en: "Import Process",
       //     he: "תהליך הייבוא"
       //   },
       //   href: "/process",
       // },
       {
         title: {
-          en: "Google Sheets Import", 
-          he: "ייבוא מטבלת גוגל שיטס"
+          en: "Google Sheets Import",
+          he: "ייבוא מטבלת גוגל שיטס",
         },
         href: "/spreadsheet",
       },
       // {
       //   title: {
-      //     en: "WooCommerce Import", 
+      //     en: "WooCommerce Import",
       //     he: "ייבוא מקבצי WooCommerce"
       //   },
       //   href: "/woocommerce",
       // },
       // {
       //   title: {
-      //     en: "WhizManage Import", 
+      //     en: "WhizManage Import",
       //     he: "ייבוא מקבצי WhizManage"
       //   },
       //   href: "/whizmanage",
       // },
       // {
       //   title: {
-      //     en: "Review Mode", 
+      //     en: "Review Mode",
       //     he: "מצב סקירה ועריכה"
       //   },
       //   href: "/review",
@@ -114,35 +114,35 @@ export const Documents: LocalizedPaths[] = [
   {
     title: {
       en: "Variations",
-      he: "ווריאציות"
+      he: "ווריאציות",
     },
     href: "/variations",
     items: [
       {
         title: {
           en: "Attributes",
-          he: "תכונות"
+          he: "תכונות",
         },
         href: "/attributes",
       },
       {
         title: {
-          en: "Options", 
-          he: "אופציות"
+          en: "Options",
+          he: "אופציות",
         },
         href: "/options",
       },
       {
         title: {
           en: "Create variations",
-          he: "יצירת ווריאציות"  
+          he: "יצירת ווריאציות",
         },
         href: "/creation",
       },
       {
         title: {
           en: "Manage variations",
-          he: "ניהול ווריאציות"  
+          he: "ניהול ווריאציות",
         },
         href: "/management",
       },
@@ -184,6 +184,92 @@ export const Documents: LocalizedPaths[] = [
   // },
   {
     spacer: true,
+  },
+  {
+    spacer: true,
+  },
+  {
+    spacer: true,
+  },
+  {
+    spacer: true,
+  },
+  {
+    spacer: true,
+  },
+  {
+    spacer: true,
+  },
+  {
+    spacer: true,
+  },
+  {
+    spacer: true,
+  },
+  {
+    spacer: true,
+  },
+  {
+    spacer: true,
+  },
+  {
+    spacer: true,
+  },
+  {
+    spacer: true,
+  },
+  {
+    spacer: true,
+  },
+  {
+    spacer: true,
+  },
+  {
+    spacer: true,
+  },
+  {
+    spacer: true,
+  },
+  {
+    title: {
+      en: "Terms & Conditions",
+      he: "תנאים והגבלות",
+    },
+    href: "/terms-conditions",
+    heading: {
+      en: "Policies",
+      he: "מדיניות",
+    },
+    items: [
+      {
+        title: {
+          en: "Terms of Use",
+          he: "תנאי שימוש",
+        },
+        href: "/terms-of-use",
+      },
+      {
+        title: {
+          en: "Purchase Policy",
+          he: "מדיניות רכישה",
+        },
+        href: "/purchase-policy",
+      },
+      {
+        title: {
+          en: "Support Services",
+          he: "שירותי תמיכה",
+        },
+        href: "/support-services",
+      },
+      {
+        title: {
+          en: "Privacy Policy",
+          he: "מדיניות פרטיות",
+        },
+        href: "/privacy-policy",
+      },
+    ],
   },
   // {
   //   title: {
@@ -261,25 +347,29 @@ export const Documents: LocalizedPaths[] = [
   //     },
   //   ],
   // },
- ]
+]
 
-
-export function getLocalizedContent(content: LocalizedContent | undefined, lang: string): string {
-  if (!content) return '';
-  return content[lang as keyof LocalizedContent] || content.en;
+export function getLocalizedContent(
+  content: LocalizedContent | undefined,
+  lang: string
+): string {
+  if (!content) return ""
+  return content[lang as keyof LocalizedContent] || content.en
 }
 
 export function getLocalizedDocuments(lang: string): Paths[] {
   function processItem(item: LocalizedPaths): Paths {
-    if ('spacer' in item) return item;
-    
+    if ("spacer" in item) return item
+
     return {
       title: getLocalizedContent(item.title, lang),
       href: item.href,
-      heading: item.heading ? getLocalizedContent(item.heading, lang) : undefined,
-      items: item.items?.map(processItem)
-    };
+      heading: item.heading
+        ? getLocalizedContent(item.heading, lang)
+        : undefined,
+      items: item.items?.map(processItem),
+    }
   }
 
-  return Documents.map(processItem);
+  return Documents.map(processItem)
 }

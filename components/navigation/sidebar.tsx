@@ -2,7 +2,7 @@ import { LuAlignLeft } from "react-icons/lu"
 
 import { Button } from "@/components/ui/button"
 import { DialogTitle } from "@/components/ui/dialog"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { RTLScrollArea } from "@/components/ui/rtl-scroll-area"
 import {
   Sheet,
   SheetClose,
@@ -22,10 +22,13 @@ type SidebarProps = {
 
 export function Sidebar({ lang }: SidebarProps) {
   return (
-    <aside className="md:flex hidden flex-[1] !w-48 !min-w-48 !max-w-48 sticky top-16 flex-col h-[94.5vh] overflow-y-auto">
-      <ScrollArea className="py-4">
+    <aside
+      className="md:flex hidden flex-[1] !w-48 !min-w-48 !max-w-48 sticky top-16 flex-col h-[94.5vh] overflow-y-auto"
+      dir={lang === "he" ? "rtl" : "ltr"}
+    >
+      <RTLScrollArea className="py-4" isRTL={lang === "he"}>
         <PageMenu lang={lang} />
-      </ScrollArea>
+      </RTLScrollArea>
     </aside>
   )
 }
@@ -49,14 +52,14 @@ export function SheetLeft({ lang }: SidebarProps) {
             <Logo lang={lang} />
           </SheetClose>
         </SheetHeader>
-        <ScrollArea className="flex flex-col gap-4">
+        <RTLScrollArea className="flex flex-col gap-4" isRTL={lang === "he"}>
           <div className="flex flex-col gap-2.5 mt-3 mx-0 px-5">
             <NavMenu isSheet lang={lang} />
           </div>
           <div className="mx-0 px-5">
             <PageMenu isSheet lang={lang} />
           </div>
-        </ScrollArea>
+        </RTLScrollArea>
       </SheetContent>
     </Sheet>
   )

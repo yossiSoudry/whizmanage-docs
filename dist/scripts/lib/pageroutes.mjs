@@ -1,5 +1,8 @@
-import { Documents } from "../settings/documents.mjs";
-export const Routes = [...Documents];
+import { getLocalizedDocuments } from "@/settings/documents";
+// פונקציה שמקבלת שפה ומחזירה את הניתובים המתורגמים
+export function getRoutes(lang) {
+    return getLocalizedDocuments(lang);
+}
 function isRoute(node) {
     return "title" in node && "href" in node;
 }
@@ -18,4 +21,11 @@ function getAllLinks(node) {
     }
     return pages;
 }
-export const PageRoutes = Routes.map((it) => getAllLinks(it)).flat();
+// פונקציה שמחזירה את כל הנתיבים לפי שפה
+export function getPageRoutes(lang) {
+    const routes = getRoutes(lang);
+    return routes.map((it) => getAllLinks(it)).flat();
+}
+// ייצוא ברירת מחדל באנגלית לתאימות לאחור
+export const Routes = getRoutes("en");
+export const PageRoutes = getPageRoutes("en");
