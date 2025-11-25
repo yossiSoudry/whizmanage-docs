@@ -1,0 +1,764 @@
+---
+title: Cart Conditions
+description: "Comprehensive guide to setting up complex and advanced cart conditions for discount rules"
+keywords: ["conditions", "cart conditions", "discount conditions"]
+---
+
+## Cart Conditions
+
+Conditions are one of the most powerful tools in the discount rules system. They allow you to define **when** a discount rule will be activated, based on the customer's cart content.
+
+### What are Conditions?
+
+<Step>
+<StepItem title="Basic Definition">
+
+**Conditions** are requirements that customers must meet for the rule to activate:
+
+**Examples:**
+- "Cart must contain at least $200"
+- "Customer must purchase at least 3 items"
+- "Electronics subtotal must be over $500"
+
+**Without Conditions** = Rule always applies (if Filters exist, it applies to filtered products).
+
+<img src="https://placehold.co/800x400?text=Conditions+Concept" alt="Conditions Concept" />
+
+<Note title="Important" type="warning">
+Conditions check **cart content**. Filters check **product attributes**. They're not the same!
+</Note>
+</StepItem>
+
+<StepItem title="Difference Between Filters and Conditions">
+
+This is a critical point to understand:
+
+| | **Filters** | **Conditions** |
+|---|-------------|----------------|
+| **Asks** | "**Which** products?" | "**When** to activate?" |
+| **Checks** | Product attributes | Cart content |
+| **Example** | "Only shirts" | "Over $200" |
+| **Effect** | Which products get discount | Whether rule activates at all |
+
+**Practical Example:**
+```
+Promotion: 20% off shirts when purchasing over $300
+
+Filters: Categories → Include → "Shirts"
+  ↳ Discount applies only to shirts
+
+Conditions: Subtotal (cart) ≥ 300
+  ↳ Rule activates only if cart total is over $300
+```
+
+**Result:**
+- Cart with shirts at $200 → ❌ No discount (doesn't meet condition)
+- Cart with shirts at $400 → ✅ 20% off shirts
+- Cart with shirts $100 + shoes $250 → ✅ 20% off shirts only
+
+<img src="https://placehold.co/800x400?text=Filters+vs+Conditions" alt="Filters vs Conditions" />
+</StepItem>
+</Step>
+
+---
+
+## Types of Conditions
+
+The system supports 4 main condition types:
+
+<Step>
+<StepItem title="1. Subtotal (cart) - Total Cart Amount">
+
+**Definition:** Total amount of all products in cart (before discounts and shipping)
+
+**When to use:**
+- Free shipping over amount
+- General discount for large carts
+- Encourage cart size increase
+
+**Examples:**
+- Subtotal (cart) **≥ 200** = "Over $200"
+- Subtotal (cart) **≤ 500** = "Up to $500"
+- Subtotal (cart) **= 100** = "Exactly $100"
+
+<img src="https://placehold.co/800x400?text=Subtotal+Cart" alt="Subtotal Cart" />
+
+**Practical Example:**
+```
+Name: "Free Shipping Over $200"
+Type: Shipping discount
+Settings: 100% discount on shipping
+Filters: None
+Conditions: Subtotal (cart) ≥ 200
+```
+</StepItem>
+
+<StepItem title="2. Category Subtotal - Amount from Category">
+
+**Definition:** Amount of products from specific category/categories in cart
+
+**When to use:**
+- Promotion on specific category with amount condition
+- "Buy X from category Y over amount Z"
+- Encourage purchasing from specific category
+
+**Fields:**
+- **Condition Type:** Category subtotal
+- **Compare:** Comparison operator (≥, ≤, =, etc.)
+- **Values:** Category selection
+- **Amount:** Required amount
+
+**Examples:**
+```
+Category subtotal
+  Categories: "Electronics"
+  Compare: ≥
+  Amount: 500
+= "Electronics amount in cart must be over $500"
+```
+
+<img src="https://placehold.co/800x400?text=Category+Subtotal" alt="Category Subtotal" />
+
+**Practical Example:**
+```
+Name: "$50 off shoes when buying over $400 in shoes"
+Type: Product adjustment
+Settings: $50 discount
+Filters: Categories → Include → "Shoes"
+Conditions: 
+  - Type: Category subtotal
+  - Categories: "Shoes"
+  - Compare: ≥
+  - Amount: 400
+```
+</StepItem>
+
+<StepItem title="3. Products Subtotal - Amount from Specific Products">
+
+**Definition:** Amount from specific products you selected in cart
+
+**When to use:**
+- Promotion on specific products with amount condition
+- "Buy products X,Y,Z over amount"
+- Bundle deals on selected products
+
+**Fields:**
+- **Condition Type:** Products subtotal
+- **Compare:** Comparison operator
+- **Values:** Specific product selection
+- **Amount:** Required amount
+
+**Examples:**
+```
+Products subtotal
+  Products: "HP Laptop", "Dell Laptop"
+  Compare: ≥
+  Amount: 3000
+= "Selected laptops amount in cart over $3000"
+```
+
+<img src="https://placehold.co/800x400?text=Products+Subtotal" alt="Products Subtotal" />
+
+**Practical Example:**
+```
+Name: "Buy Apple products over $5000 and get headphones free"
+Type: BXGY
+Settings: 
+  Buy: Apple products
+  Get: Headphones (100% discount)
+Filters: None
+Conditions:
+  - Type: Products subtotal
+  - Products: "iPhone 15", "MacBook Pro", "iPad"
+  - Compare: ≥
+  - Amount: 5000
+```
+</StepItem>
+
+<StepItem title="4. Line Item Count - Number of Items">
+
+**Definition:** Number of different items in cart (not total quantity!)
+
+**When to use:**
+- "Buy X different items"
+- Encourage cart variety
+- Promotions on item quantity
+
+**Important to understand:**
+- Counts by **number of lines** in cart
+- 3 shirts of same product = **1 item**
+- 3 different shirts = **3 items**
+
+**Examples:**
+```
+Line Item Count ≥ 3
+= "At least 3 different products in cart"
+```
+
+<img src="https://placehold.co/800x400?text=Line+Item+Count" alt="Line Item Count" />
+
+**Practical Example:**
+```
+Name: "Buy 5 different products and get 10% off"
+Type: Cart adjustment
+Settings: 10% discount
+Filters: None
+Conditions: Line Item Count ≥ 5
+```
+
+<Note title="Tip" type="info">
+If you want to count unit quantity (not different products), use Bulk Discount instead of Conditions.
+</Note>
+</StepItem>
+</Step>
+
+---
+
+## Comparison Operators
+
+Each condition uses a comparison operator:
+
+<Step>
+<StepItem title="Operator List">
+
+| Symbol | Meaning | Example | Explanation |
+|--------|---------|---------|-------------|
+| **↑=** | Greater or equal | ≥ 200 | Over 200 or exactly 200 |
+| **↓=** | Less or equal | ≤ 500 | Up to 500 including |
+| **↑** | Greater than | > 100 | Over 100 (not including 100) |
+| **↓** | Less than | < 1000 | Under 1000 (not including) |
+| **=** | Equal to | = 50 | Exactly 50 |
+| **=X** | Not equal to | ≠ 0 | Any value except 0 |
+
+<img src="https://placehold.co/800x400?text=Comparison+Operators" alt="Comparison Operators" />
+
+**Tips:**
+- ✅ Use **≥** (greater or equal) for most cases - "over $200"
+- ✅ Use **≤** (less or equal) for limited promotions - "up to $500"
+- ⚠️ Be careful with **=** (exactly equal) - rarely needed
+</StepItem>
+</Step>
+
+---
+
+## Match ALL vs Match ANY
+
+When you have more than one condition, you need to choose the logic:
+
+<Step>
+<StepItem title="Match ALL - Meet All Conditions">
+
+**Definition:** Customer must meet **all** conditions you defined
+
+**When to use:**
+- When multiple requirements are mandatory
+- Complex promotions with several conditions
+- When you want to be strict
+
+**Example:**
+```
+Match ALL:
+  1. Subtotal (cart) ≥ 300
+  2. Line Item Count ≥ 3
+
+Meaning: 
+  Customer needs to purchase over $300 **and** at least 3 different products
+```
+
+**Scenarios:**
+| Amount | Items | Result |
+|--------|-------|--------|
+| $350 | 4 items | ✅ Meets both |
+| $400 | 2 items | ❌ Not enough items |
+| $250 | 5 items | ❌ Not enough amount |
+
+<img src="https://placehold.co/800x400?text=Match+ALL" alt="Match ALL" />
+</StepItem>
+
+<StepItem title="Match ANY - Meet At Least One Condition">
+
+**Definition:** Customer needs to meet **at least one** of the conditions
+
+**When to use:**
+- When there are multiple ways to earn discount
+- Flexible promotions
+- When you want to give customers options
+
+**Example:**
+```
+Match ANY:
+  1. Subtotal (cart) ≥ 500
+  2. Line Item Count ≥ 5
+
+Meaning:
+  Customer needs to purchase over $500 **or** at least 5 different products
+```
+
+**Scenarios:**
+| Amount | Items | Result |
+|--------|-------|--------|
+| $600 | 2 items | ✅ Meets amount |
+| $300 | 7 items | ✅ Meets items |
+| $400 | 4 items | ❌ Meets neither |
+
+<img src="https://placehold.co/800x400?text=Match+ANY" alt="Match ANY" />
+</StepItem>
+</Step>
+
+---
+
+## Practical Examples
+
+<Step>
+<StepItem title="Example 1: Free Shipping Over Amount">
+
+**Goal:** Free shipping for anyone purchasing over $200
+
+```
+Name: "Free Shipping Over $200"
+Type: Shipping discount
+Settings: 100% discount
+Filters: None
+Conditions:
+  Logic: Match ALL (doesn't matter, only one condition)
+  - Subtotal (cart) ≥ 200
+```
+
+**How it works:**
+- Customer with $150 cart → ❌ Pays for shipping
+- Customer with $250 cart → ✅ Free shipping
+
+<img src="https://placehold.co/800x400?text=Example+1" alt="Example 1" />
+</StepItem>
+
+<StepItem title="Example 2: Category Discount with Condition">
+
+**Goal:** 20% off electronics when purchasing over $1000 in electronics
+
+```
+Name: "20% off electronics over $1000"
+Type: Product adjustment
+Settings: 20% discount
+Filters: 
+  - Categories → Include → "Electronics"
+Conditions:
+  Logic: Match ALL
+  - Type: Category subtotal
+  - Categories: "Electronics"
+  - Compare: ≥
+  - Amount: 1000
+```
+
+**How it works:**
+- Cart: Laptop $800 → ❌ No discount (didn't reach $1000)
+- Cart: Laptop $800 + Mouse $250 → ✅ 20% off both
+- Cart: Laptop $1200 + Shoes $300 → ✅ 20% off laptop only
+
+<img src="https://placehold.co/800x400?text=Example+2" alt="Example 2" />
+</StepItem>
+
+<StepItem title="Example 3: Complex Promotion with 2 Conditions">
+
+**Goal:** 15% discount when purchasing over $400 **and** at least 3 different products
+
+```
+Name: "15% discount - $400 + 3 items"
+Type: Cart adjustment
+Settings: 15% discount
+Filters: None
+Conditions:
+  Logic: Match ALL (must meet both!)
+  1. Subtotal (cart) ≥ 400
+  2. Line Item Count ≥ 3
+```
+
+**How it works:**
+| Cart | Amount | Items | Result |
+|------|--------|-------|--------|
+| 3 different shirts + pants | $450 | 4 | ✅ 15% discount |
+| 5 identical shirts | $500 | 1 | ❌ No discount |
+| 2 items | $600 | 2 | ❌ No discount |
+
+<img src="https://placehold.co/800x400?text=Example+3" alt="Example 3" />
+</StepItem>
+
+<StepItem title="Example 4: Match ANY - Flexible Options">
+
+**Goal:** 10% discount for purchasing over $500 **or** at least 5 items
+
+```
+Name: "10% discount - $500 or 5 items"
+Type: Cart adjustment
+Settings: 10% discount
+Filters: None
+Conditions:
+  Logic: Match ANY (one is enough)
+  1. Subtotal (cart) ≥ 500
+  2. Line Item Count ≥ 5
+```
+
+**How it works:**
+| Cart | Amount | Items | Result |
+|------|--------|-------|--------|
+| 6 cheap items | $300 | 6 | ✅ 10% discount (meets items) |
+| One expensive item | $700 | 1 | ✅ 10% discount (meets amount) |
+| 3 items | $400 | 3 | ❌ No discount (meets neither) |
+
+<img src="https://placehold.co/800x400?text=Example+4" alt="Example 4" />
+</StepItem>
+
+<StepItem title="Example 5: Complex Condition with 3 Conditions">
+
+**Goal:** Free shipping for purchasing:
+- Over $300 general **or**
+- Over $200 in electronics **or**
+- At least 4 sports products
+
+```
+Name: "Free shipping - 3 flexible conditions"
+Type: Shipping discount
+Settings: 100% discount
+Filters: None
+Conditions:
+  Logic: Match ANY (one is enough)
+  1. Subtotal (cart) ≥ 300
+  2. Category subtotal → "Electronics" ≥ 200
+  3. Products subtotal → Sports products ≥ 4 items
+```
+
+**How it works:**
+- Cart: $350 general → ✅ Free shipping (condition 1)
+- Cart: Laptop $250 + Book $50 → ✅ Free shipping (condition 2)
+- Cart: 4 balls $150 → ✅ Free shipping (condition 3)
+- Cart: $250 regular products → ❌ Pays shipping
+
+<img src="https://placehold.co/800x400?text=Example+5" alt="Example 5" />
+</StepItem>
+</Step>
+
+---
+
+## Advanced Combinations
+
+<Step>
+<StepItem title="Combining Filters + Conditions">
+
+Real power comes from proper combination of Filters and Conditions:
+
+**Example 1: Targeted Discount**
+```
+Goal: 30% off children's clothing when purchasing over $200 in clothing
+
+Filters: 
+  - Categories → Include → "Children's Clothing"
+Conditions:
+  - Category subtotal → "Children's Clothing", "Baby Clothing" ≥ 200
+```
+
+**Example 2: Conditional BOGO**
+```
+Goal: Buy 2 shirts get 1 free - only for carts over $150
+
+Type: BOGO
+Settings: Buy 2, Get 1 (100%)
+Filters:
+  - Categories → Include → "Shirts"
+Conditions:
+  - Subtotal (cart) ≥ 150
+```
+
+<img src="https://placehold.co/800x400?text=Advanced+Combinations" alt="Advanced Combinations" />
+</StepItem>
+
+<StepItem title="Discount Tiers Without Bulk Discount">
+
+You can create discount tiers using multiple rules:
+
+```
+Rule 1: "5% over $200"
+  Priority: 20
+  Type: Cart adjustment
+  Settings: 5%
+  Conditions: Subtotal ≥ 200
+
+Rule 2: "10% over $500"
+  Priority: 10
+  Type: Cart adjustment
+  Settings: 10%
+  Conditions: Subtotal ≥ 500
+
+Rule 3: "15% over $1000"
+  Priority: 0
+  Type: Cart adjustment
+  Settings: 15%
+  Conditions: Subtotal ≥ 1000
+```
+
+**Result:**
+- $150 → No discount
+- $300 → 5% discount
+- $700 → 10% discount
+- $1500 → 15% discount
+
+<img src="https://placehold.co/800x400?text=Discount+Tiers" alt="Discount Tiers" />
+</StepItem>
+</Step>
+
+---
+
+## Tips and Best Practices
+
+<Step>
+<StepItem title="1. Start Simple">
+
+**Don't complicate immediately:**
+- Start with one condition
+- Test that it works
+- Add more conditions gradually
+
+**Progress example:**
+```
+Step 1: No Conditions
+  ↓ Tested, works
+Step 2: + Subtotal ≥ 200
+  ↓ Tested, works
+Step 3: + Line Item Count ≥ 3
+  ↓ Tested, works - Done!
+```
+
+<img src="https://placehold.co/800x400?text=Start+Simple" alt="Start Simple" />
+</StepItem>
+
+<StepItem title="2. Test in Real Cart">
+
+**Before launch:**
+1. Create cart exactly as customer would
+2. Check discount appears/doesn't appear correctly
+3. Try edge cases:
+   - Exactly on threshold ($199.99 vs $200)
+   - Below threshold
+   - Way above threshold
+
+**Edge cases to test:**
+```
+If condition: Subtotal ≥ 200
+
+Test:
+  ✅ $199 → No discount
+  ✅ $200 → Has discount
+  ✅ $201 → Has discount
+  ✅ $500 → Has discount
+```
+
+<img src="https://placehold.co/800x400?text=Test+In+Cart" alt="Test In Cart" />
+</StepItem>
+
+<StepItem title="3. Beware of Conflicting Conditions">
+
+**Common problem:** Two conditions that can't both be true
+
+**Problem example:**
+```
+❌ Wrong:
+  Match ALL:
+    1. Subtotal (cart) ≥ 500
+    2. Subtotal (cart) ≤ 300
+
+  ↳ No cart will meet both conditions!
+```
+
+**Solution:**
+```
+✅ Correct:
+  Match ALL:
+    1. Subtotal (cart) ≥ 300
+    2. Subtotal (cart) ≤ 500
+
+  ↳ Carts between $300-$500
+```
+
+<img src="https://placehold.co/800x400?text=Avoid+Conflicts" alt="Avoid Conflicts" />
+</StepItem>
+
+<StepItem title="4. Document Intent">
+
+**In Message field or rule name:**
+- Explain what the rule should do
+- Document conditions in plain language
+- This will help you in the future
+
+**Good example:**
+```
+Name: "Free shipping over $200 - until 12/31"
+Message: "You got free shipping! Keep shopping over $200"
+```
+
+<img src="https://placehold.co/800x400?text=Document+Intent" alt="Document Intent" />
+</StepItem>
+
+<StepItem title="5. Proper Use of Match ALL/ANY">
+
+**Rule of thumb:**
+
+**Match ALL** when:
+- All conditions are mandatory
+- Want to be strict
+- Expensive/limited promotion
+
+**Match ANY** when:
+- Multiple ways to qualify
+- Want to be flexible
+- Broad promotion
+
+**Example:**
+```
+Match ALL: "Over $500 **and** 5 items"
+  ↳ Strict - only large customers
+
+Match ANY: "Over $500 **or** 5 items"
+  ↳ Flexible - more customers qualify
+```
+
+<img src="https://placehold.co/800x400?text=ALL+vs+ANY" alt="ALL vs ANY" />
+</StepItem>
+</Step>
+
+---
+
+## Frequently Asked Questions
+
+<Step>
+<StepItem title="Are Conditions mandatory?">
+
+**No!** Conditions are optional:
+
+- **Without Conditions** = Rule always applies
+- **With Conditions** = Rule applies only when conditions are met
+
+**When you don't need Conditions:**
+- Simple category discount (Filters are enough)
+- BOGO without restrictions
+- General site-wide promotion
+</StepItem>
+
+<StepItem title="What's the difference between Category subtotal and Products subtotal?">
+
+**Category subtotal:**
+- Amount from entire category
+- Example: All "Electronics" products
+
+**Products subtotal:**
+- Amount from specific products you selected
+- Example: Only "iPhone 15" and "iPad Pro"
+
+**When to use each:**
+- Category = When there are many products in category
+- Products = When you want precise control over specific products
+</StepItem>
+
+<StepItem title="Can I combine Filters with Conditions?">
+
+**Yes! And recommended!**
+
+This is the most powerful combination:
+- **Filters** = Which products
+- **Conditions** = When to activate
+
+**Example:**
+```
+Promotion: 20% off clothing when purchasing over $300
+
+Filters: Categories → "Clothing"
+  ↳ Discount only on clothing
+
+Conditions: Subtotal (cart) ≥ 300
+  ↳ Rule activates only over $300
+```
+</StepItem>
+
+<StepItem title="What happens if customer doesn't meet conditions?">
+
+**Simply - rule doesn't apply:**
+- No discount
+- No message
+- Rule just ignores the cart
+
+**Customer doesn't know:**
+- That such rule exists
+- That they almost met condition
+- How much is missing
+
+**Tip:** Use Message to encourage:
+```
+Message: "$50 more and you'll get free shipping!"
+```
+</StepItem>
+
+<StepItem title="Can I create very complex Conditions?">
+
+**Yes, but:**
+- ✅ Can add many conditions
+- ⚠️ Keep it simple - easier to manage
+- ⚠️ Test thoroughly - more conditions = more room for errors
+
+**Recommendation:**
+- Up to 3 conditions = Excellent
+- 4-5 conditions = OK but test well
+- 6+ conditions = Consider splitting into multiple rules
+</StepItem>
+</Step>
+
+---
+
+## Summary
+
+**Conditions are a powerful tool for creating smart promotions:**
+
+🎯 **4 Condition Types:**
+1. Subtotal (cart) - Cart amount
+2. Category subtotal - Amount from category
+3. Products subtotal - Amount from specific products
+4. Line Item Count - Number of different items
+
+🔧 **2 Logic Modes:**
+- Match ALL - Meet all conditions
+- Match ANY - Meet at least one condition
+
+💡 **Guiding Principles:**
+- Start simple
+- Test in real cart
+- Combine with Filters for maximum power
+- Document intent
+
+**Remember:** Filters = "Which products", Conditions = "When"
+
+---
+
+### Continue Reading
+
+<CardGrid>
+  <Card
+    subtitle="Introduction"
+    title="Introduction to Discount Rules"
+    description="Return to introduction guide on discount rules"
+    href="/docs/discount-rules"
+  />
+  <Card
+    subtitle="Creating Rules"
+    title="Creating Rules"
+    description="Step-by-step guide to creating a new rule"
+    href="/docs/discount-rules/creating"
+  />
+  <Card
+    subtitle="Discount Types"
+    title="Rule Types"
+    description="Learn about all available discount types"
+    href="/docs/discount-rules/types"
+  />
+  <Card
+    subtitle="Daily Management"
+    title="Managing Rules"
+    description="Tips for managing and organizing discount rules"
+    href="/docs/discount-rules/managing"
+  />
+</CardGrid>
