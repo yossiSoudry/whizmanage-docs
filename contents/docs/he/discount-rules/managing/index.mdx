@@ -1,0 +1,580 @@
+---
+title: ניהול חוקי הנחות
+description: "טיפים וטכניקות לניהול יעיל של חוקי הנחות במערכת Whizmanage"
+keywords: ["manage rules", "organize discounts", "ניהול חוקים", "ארגון הנחות"]
+---
+
+## ניהול וארגון חוקי הנחות
+
+ניהול יעיל של חוקי הנחות חיוני להפעלת מבצעים מוצלחים. במדריך זה נלמד כיצד לנצל את כל הכלים שהמערכת מציעה לניהול מקצועי ויעיל.
+
+### ממשק הטבלה
+
+<Step>
+<StepItem title="סקירת הממשק">
+
+טבלת חוקי ההנחות מציגה מידע מרוכז על כל החוקים:
+
+**עמודות עיקריות:**
+- **Name** - שם החוק
+- **Type** - סוג ההנחה + כפתור הגדרות
+- **Status** - מתג הפעלה/השבתה
+- **Start/End date** - תאריכי פעילות
+- **Priority** - סדר עדיפות
+- **Filters** - סינון מוצרים + כפתור עריכה
+- **Conditions** - תנאי עגלה + כפתור עריכה
+- **Message** - הודעה ללקוח
+
+<img src="https://placehold.co/800x400?text=Table+interface" alt="ממשק הטבלה" />
+
+<Note title="טיפ" type="info">
+ניתן לשנות את רוחב העמודות על ידי גרירת הקו המפריד בין כותרות העמודות.
+</Note>
+</StepItem>
+
+<StepItem title="עריכה ישירה בטבלה">
+
+רוב השדות ניתנים לעריכה ישירות בטבלה:
+
+**לחיצה בודדת:**
+- **Name** - עריכת שם החוק
+- **Priority** - שינוי מספר העדיפות
+- **Message** - עריכת ההודעה
+- **Start/End date** - שינוי תאריכים
+
+**מתגים:**
+- **Status** - הפעלה/השבתה מיידית של החוק
+
+**כפתורי עריכה:**
+- **Type Settings** (⚙️) - פתיחת הגדרות ההנחה
+- **Filters Edit** - עריכת פילטרי מוצרים
+- **Conditions Edit** - עריכת תנאי עגלה
+
+<img src="https://placehold.co/800x400?text=Inline+editing" alt="עריכה בטבלה" />
+
+<Note title="חשוב" type="warning">
+כל שינוי נשמר אוטומטית לאחר העריכה. אין צורך ללחוץ על כפתור "שמירה".
+</Note>
+</StepItem>
+</Step>
+
+### כלי סינון וחיפוש
+
+<Step>
+<StepItem title="חיפוש טקסט חופשי">
+
+שדה החיפוש בראש הטבלה מאפשר:
+- חיפוש לפי שם חוק
+- חיפוש לפי סוג הנחה
+- חיפוש לפי הודעה
+- תוצאות מיידיות תוך כדי הקלדה
+
+**דוגמאות חיפוש:**
+- "קיץ" - ימצא את כל החוקים עם המילה קיץ
+- "BOGO" - ימצא חוקי BOGO
+- "משלוח" - ימצא חוקי משלוח חינם
+
+<img src="https://placehold.co/800x400?text=Search+bar" alt="שורת חיפוש" />
+</StepItem>
+
+<StepItem title="סינון לפי Status">
+
+כפתור **Filters** מאפשר סינון מהיר:
+
+**Status:**
+- 🟢 **Active** - רק חוקים פעילים
+- ⚫ **Draft** - רק טיוטות
+- 🔄 **All** - כל החוקים
+
+**Type:**
+- **Product adjustment**
+- **Cart adjustment**
+- **BOGO**
+- **BXGY**
+- ועוד...
+
+<img src="https://placehold.co/800x400?text=Filter+by+status" alt="סינון לפי סטטוס" />
+
+<Note title="טיפ" type="info">
+שלבו חיפוש טקסט עם פילטרים לתוצאות מדויקות יותר. לדוגמה: חיפוש "קיץ" + פילטר Status:Active.
+</Note>
+</StepItem>
+
+<StepItem title="מיון לפי עמודות">
+
+לחיצה על כותרת עמודה ממיינת את הטבלה:
+
+**מיונים שימושיים:**
+- **Priority** - לראות את החוקים בסדר הפעלה
+- **Start date** - לראות חוקים לפי תאריך התחלה
+- **End date** - למצוא חוקים שפגים בקרוב
+- **Name** - מיון אלפביתי
+
+**כיוון המיון:**
+- ↑ עולה (A→Z, 0→9, ישן→חדש)
+- ↓ יורד (Z→A, 9→0, חדש→ישן)
+
+<img src="https://placehold.co/800x400?text=Sort+columns" alt="מיון עמודות" />
+</StepItem>
+</Step>
+
+### עריכה מרובה (Bulk Edit)
+
+<Step>
+<StepItem title="בחירת חוקים">
+
+**בחירה ידנית:**
+1. סמנו את תיבת הסימון ליד כל חוק
+2. או לחצו על תיבת הסימון בכותרת לבחירת הכל
+
+**מספר החוקים הנבחרים** מופיע בסרגל בתחתית המסך.
+
+<img src="https://placehold.co/800x400?text=Select+rows" alt="בחירת שורות" />
+</StepItem>
+
+<StepItem title="פעולות על מספר חוקים">
+
+כאשר חוקים נבחרו, מופיע **Floating Toolbar** בתחתית המסך עם האפשרויות:
+
+**פעולות זמינות:**
+- 📋 **Duplicate** - שכפול החוקים הנבחרים
+- ⚙️ **Bulk Edit** - עריכה מרובה
+- 🗑️ **Move to Trash** - העברה לפח
+- ♻️ **Restore** (בפח) - שחזור חוקים
+- 🔴 **Delete Permanently** - מחיקה לצמיתות
+
+<img src="https://placehold.co/800x400?text=Bulk+actions" alt="פעולות מרובות" />
+
+<Note title="חשוב" type="warning">
+פעולת **Duplicate** עבור יותר מחוק אחד זמינה רק בגרסת Pro.
+</Note>
+</StepItem>
+
+<StepItem title="שימוש ב-Bulk Edit">
+
+**Bulk Edit** מאפשר לערוך כמה חוקים בו-זמנית:
+
+1. בחרו את החוקים הרצויים
+2. לחצו על **Bulk Edit** מה-Toolbar
+3. בחרו את השדות לעריכה:
+   - **Status** - שינוי סטטוס לכולם
+   - **Priority** - הגדלה/הקטנה של עדיפות
+   - **Start/End date** - עדכון תאריכים
+   - **Message** - החלפת הודעה
+4. הגדירו את הערכים החדשים
+5. לחצו על **Apply Changes**
+
+<img src="https://placehold.co/800x400?text=Bulk+edit+modal" alt="מודל עריכה מרובה" />
+
+**תרחישים שימושיים:**
+- הארכת מבצע - עדכון End date לכל החוקים
+- השבתה זמנית - שינוי Status ל-Draft
+- עדכון עדיפויות - הגדלת Priority ב-10
+</StepItem>
+</Step>
+
+### שכפול חוקים
+
+<Step>
+<StepItem title="שכפול חוק בודד">
+
+שכפול חוק הוא הדרך המהירה ביותר ליצור חוק דומה:
+
+1. סמנו חוק אחד
+2. לחצו על **Duplicate** ב-Toolbar
+3. החוק ישוכפל עם התוספת "(copy)" בשם
+4. ערכו את החוק המשוכפל לפי הצורך
+
+<img src="https://placehold.co/800x400?text=Duplicate+rule" alt="שכפול חוק" />
+
+**מה משוכפל:**
+- כל ההגדרות והפרמטרים
+- Filters
+- Conditions
+- תאריכים (זהים למקור)
+
+**מה משתנה:**
+- Status משתנה ל-**Draft**
+- נוסף "(copy)" לשם
+
+<Note title="טיפ" type="info">
+לאחר שכפול, מומלץ לשנות את התאריכים והשם מיד כדי למנוע בלבול.
+</Note>
+</StepItem>
+
+<StepItem title="שכפול מרובה">
+
+שכפול של מספר חוקים בבת אחת (Pro):
+
+1. בחרו מספר חוקים
+2. לחצו **Duplicate**
+3. כל החוקים ישוכפלו עם "(copy)"
+4. ערכו באמצעות Bulk Edit
+
+**שימושי עבור:**
+- יצירת סדרת מבצעים דומים
+- העתקת חוקים למחזור חדש
+- יצירת וריאציות של אותו מבצע
+
+<img src="https://placehold.co/800x400?text=Duplicate+multiple" alt="שכפול מרובה" />
+</StepItem>
+</Step>
+
+### Undo/Redo - ביטול ושחזור
+
+<Step>
+<StepItem title="מערכת ההיסטוריה">
+
+המערכת שומרת היסטוריית שינויים אוטומטית:
+
+**כפתורי Undo/Redo** בראש הטבלה:
+- ↶ **Undo** - ביטול השינוי האחרון
+- ↷ **Redo** - שחזור שינוי שבוטל
+
+**קיצורי מקלדת:**
+- `Ctrl+Z` (Windows) / `Cmd+Z` (Mac) - Undo
+- `Ctrl+Y` (Windows) / `Cmd+Shift+Z` (Mac) - Redo
+
+<img src="https://placehold.co/800x400?text=Undo+redo+buttons" alt="כפתורי Undo/Redo" />
+
+<Note title="חשוב" type="warning">
+היסטוריה נשמרת רק בסשן הנוכחי. רענון הדף ימחק את ההיסטוריה.
+</Note>
+</StepItem>
+
+<StepItem title="מה ניתן לבטל">
+
+ניתן לבטל כמעט כל פעולה:
+- ✅ עריכת שדות
+- ✅ שינוי Status
+- ✅ עדכון תאריכים
+- ✅ שינוי Filters/Conditions
+- ✅ Bulk Edit
+- ✅ יצירת חוק חדש
+- ❌ מחיקה לצמיתות (Delete Permanently)
+
+<img src="https://placehold.co/800x400?text=Undo+actions" alt="פעולות שניתן לבטל" />
+</StepItem>
+</Step>
+
+### ניהול עמודות
+
+<Step>
+<StepItem title="הצגה/הסתרה של עמודות">
+
+כפתור **Columns** בראש הטבלה מאפשר:
+
+**הצגת/הסתרת עמודות:**
+- סמנו/בטלו סימון של עמודות
+- העמודות מתעדכנות מיידית
+- ההגדרות נשמרות אוטומטית
+
+**שימושי עבור:**
+- הצגה ממוקדת של מידע רלוונטי
+- עבודה במסכים קטנים
+- פישוט הממשק
+
+<img src="https://placehold.co/800x400?text=Display+columns" alt="ניהול עמודות" />
+
+<Note title="טיפ" type="info">
+מומלץ להסתיר עמודות שאינכם משתמשים בהן באופן קבוע כדי לפשט את התצוגה.
+</Note>
+</StepItem>
+
+<StepItem title="שינוי סדר עמודות">
+
+ניתן לשנות את סדר העמודות בטבלה:
+
+1. גררו את כותרת העמודה
+2. שחררו במיקום הרצוי
+3. הסדר החדש נשמר אוטומטית
+
+<img src="https://placehold.co/800x400?text=Reorder+columns" alt="שינוי סדר עמודות" />
+</StepItem>
+
+<StepItem title="הצמדת עמודות (Pin)">
+
+עמודות ניתנות להצמדה לצדדי הטבלה:
+
+**עמודות מוצמדות:**
+- **שמאל:** Actions, Select, Expand
+- **ימין:** Row actions
+
+**יתרונות:**
+- גלילה אופקית נוחה
+- גישה מהירה לפעולות
+- מידע חשוב תמיד גלוי
+
+<img src="https://placehold.co/800x400?text=Pinned+columns" alt="עמודות מוצמדות" />
+</StepItem>
+</Step>
+
+### ניהול פח האשפה (Trash)
+
+<Step>
+<StepItem title="העברה לפח">
+
+במקום מחיקה לצמיתות, חוקים עוברים לפח:
+
+**העברה לפח:**
+1. בחרו חוק/ים
+2. לחצו **Move to Trash**
+3. אשרו את הפעולה
+
+**מה קורה:**
+- החוק מוסתר מהטבלה הראשית
+- החוק נשמר בפח למשך 30 יום
+- ניתן לשחזר את החוק בכל עת
+
+<img src="https://placehold.co/800x400?text=Move+to+trash" alt="העברה לפח" />
+</StepItem>
+
+<StepItem title="צפייה בפח">
+
+כפתור **Trash** בראש הטבלה:
+
+**בפח תוכלו:**
+- לראות את כל החוקים שנמחקו
+- לשחזר חוקים (Restore)
+- למחוק לצמיתות (Delete Permanently)
+
+<img src="https://placehold.co/800x400?text=View+trash" alt="צפייה בפח" />
+
+<Note title="חשוב" type="warning">
+חוקים בפח נמחקים אוטומטית אחרי 30 יום. מחיקה לצמיתות אינה הפיכה!
+</Note>
+</StepItem>
+
+<StepItem title="שחזור חוקים">
+
+שחזור חוק מהפח:
+
+1. היכנסו לפח (כפתור Trash)
+2. בחרו את החוק/ים לשחזור
+3. לחצו **Restore**
+4. החוק יחזור לטבלה הראשית
+
+**מה משוחזר:**
+- כל ההגדרות המקוריות
+- Status חוזר למצב המקורי
+- תאריכים נשארים כמו שהיו
+
+<img src="https://placehold.co/800x400?text=Restore+from+trash" alt="שחזור מהפח" />
+</StepItem>
+</Step>
+
+### ארגון לפי עדיפויות
+
+<Step>
+<StepItem title="הבנת Priority">
+
+**Priority** קובע את סדר הפעלת החוקים:
+
+**כללים:**
+- מספר **נמוך** = עדיפות **גבוהה**
+- Priority 0 רץ לפני Priority 10
+- חוקים באותה Priority רצים לפי ID
+
+**דוגמה:**
+| Priority | שם החוק | סדר הפעלה |
+|----------|---------|-----------|
+| 0 | הנחה VIP 30% | 1 (ראשון) |
+| 5 | הנחה רגילה 15% | 2 |
+| 10 | הנחה בסיסית 5% | 3 (אחרון) |
+
+<img src="https://placehold.co/800x400?text=Priority+order" alt="סדר עדיפות" />
+</StepItem>
+
+<StepItem title="ארגון אסטרטגי">
+
+**המלצות לארגון:**
+
+**שכבת VIP (Priority 0-9):**
+- הנחות ללקוחות VIP
+- מבצעים מיוחדים
+- חוקי נאמנות
+
+**שכבה כללית (Priority 10-19):**
+- מבצעים רגילים
+- הנחות קטגוריות
+- BOGO וחבילות
+
+**שכבת בסיס (Priority 20+):**
+- הנחות ברירת מחדל
+- משלוח חינם בסיסי
+- חוקים כלליים
+
+<img src="https://placehold.co/800x400?text=Priority+strategy" alt="אסטרטגיית עדיפות" />
+
+<Note title="טיפ" type="info">
+השאירו רווחים בין Priority (0, 10, 20) כדי שיהיה מקום להכניס חוקים נוספים בעתיד.
+</Note>
+</StepItem>
+</Step>
+
+### טיפים לעבודה יעילה
+
+<Step>
+<StepItem title="שמות חוקים תיאוריים">
+
+**מבנה מומלץ לשם:**
+```
+[תאריך] - [סוג] - [פרטים]
+```
+
+**דוגמאות:**
+- ✅ "07/2024 - BOGO - חולצות קיץ"
+- ✅ "Q3 - משלוח חינם - מעל 200₪"
+- ✅ "חנוכה - 20% - צעצועים"
+
+**יתרונות:**
+- מיון טבעי לפי תאריך
+- זיהוי מהיר של סוג המבצע
+- קל למצוא ולנהל
+
+<img src="https://placehold.co/800x400?text=Naming+convention" alt="כללי שמות" />
+</StepItem>
+
+<StepItem title="סימון חוקים זמניים">
+
+**שימוש ב-Draft:**
+- חוקים בהכנה
+- מבצעים לעתיד
+- חוקים לבדיקה
+
+**הגדרת תאריכים:**
+- תמיד הגדירו End date למבצעים זמניים
+- השתמשו ב-Start date למבצעים מתוזמנים
+- בדקו תאריכים פגים באופן קבוע
+
+<img src="https://placehold.co/800x400?text=Temporary+rules" alt="חוקים זמניים" />
+</StepItem>
+
+<StepItem title="ניקיון תקופתי">
+
+**כל חודש:**
+- ✅ מחקו חוקים שפג תוקפם
+- ✅ בדקו את הפח ורוקנו אותו
+- ✅ עדכנו Priority במידת הצורך
+
+**כל רבעון:**
+- ✅ בדקו ביצועי חוקים
+- ✅ ארגנו מחדש לפי עדיפויות
+- ✅ עדכנו תיעוד פנימי
+
+<img src="https://placehold.co/800x400?text=Periodic+cleanup" alt="ניקיון תקופתי" />
+</StepItem>
+
+<StepItem title="גיבוי ותיעוד">
+
+**גיבוי:**
+- שכפלו חוקים חשובים
+- תעדו הגדרות מורכבות
+- שמרו היסטוריה של מבצעים
+
+**תיעוד:**
+- רשמו מטרת כל חוק
+- תעדו תוצאות
+- למדו מהצלחות וכישלונות
+
+<img src="https://placehold.co/800x400?text=Backup+documentation" alt="גיבוי ותיעוד" />
+</StepItem>
+</Step>
+
+### קיצורי מקלדת שימושיים
+
+| פעולה | Windows | Mac |
+|-------|---------|-----|
+| **Undo** | Ctrl+Z | Cmd+Z |
+| **Redo** | Ctrl+Y | Cmd+Shift+Z |
+| **Search** | Ctrl+K | Cmd+K |
+| **Save** (במודלים) | Ctrl+S | Cmd+S |
+| **Close** (מודל) | Esc | Esc |
+
+<Note title="טיפ" type="info">
+השתמשו בקיצורי מקלדת כדי לעבוד מהר יותר ולחסוך זמן!
+</Note>
+
+### פתרון בעיות נפוצות
+
+<Step>
+<StepItem title="חוק לא עובד">
+
+**בדקו:**
+1. ✅ Status הוא Active (לא Draft)
+2. ✅ התאריכים נכונים (בטווח הנוכחי)
+3. ✅ Filters מכילים את המוצרים הנכונים
+4. ✅ Conditions מתקיימים בעגלה
+5. ✅ Priority לא נחסם על ידי חוק אחר
+
+<img src="https://placehold.co/800x400?text=Rule+not+working" alt="חוק לא עובד" />
+</StepItem>
+
+<StepItem title="שני חוקים מתנגשים">
+
+**פתרון:**
+1. בדקו את Priority - החוק עם Priority נמוך יותר ירוץ ראשון
+2. שנו את Filters כך שלא יחפפו
+3. התאימו את Conditions למנוע התנגשות
+4. שקלו למזג לחוק אחד
+
+<img src="https://placehold.co/800x400?text=Rules+conflict" alt="התנגשות חוקים" />
+</StepItem>
+
+<StepItem title="השינויים לא נשמרים">
+
+**סיבות אפשריות:**
+- בעיית תקשורת - בדקו חיבור לאינטרנט
+- שגיאת הרשאות - ודאו שיש הרשאות לעריכה
+- תוקף פג - התחברו מחדש
+
+**פתרון:**
+1. רעננו את הדף
+2. התחברו מחדש
+3. נסו שוב לערוך
+
+<img src="https://placehold.co/800x400?text=Changes+not+saving" alt="שינויים לא נשמרים" />
+</StepItem>
+</Step>
+
+### סיכום
+
+ניהול נכון של חוקי הנחות דורש:
+- 🎯 **ארגון** - שמות ברורים, Priority מסודר
+- 🔍 **מעקב** - בדיקה תקופתית, ניקיון
+- 📊 **ניתוח** - למידה מתוצאות
+- 🛠️ **כלים** - שימוש ב-Bulk Edit, Undo/Redo
+- 📝 **תיעוד** - רישום והבנת החוקים
+
+<Note title="זכרו" type="info">
+מערכת חוקי הנחות מאורגנת טוב = מבצעים מוצלחים יותר וניהול קל יותר!
+</Note>
+
+### המשך לקריאה
+
+<CardGrid>
+  <Card
+    subtitle="מבוא"
+    title="Introduction"
+    description="חזרה למדריך המבוא המלא על חוקי הנחות"
+    href="/he/docs/discount-rules"
+  />
+  <Card
+    subtitle="יצירת חוקים"
+    title="Creating Rules"
+    description="מדריך שלב אחר שלב ליצירת חוק חדש"
+    href="/he/docs/discount-rules/creating"
+  />
+  <Card
+    subtitle="סוגי הנחות"
+    title="Rule Types"
+    description="הכירו את כל סוגי ההנחות הזמינים"
+    href="/he/docs/discount-rules/types"
+  />
+  <Card
+    subtitle="תנאים מתקדמים"
+    title="Conditions"
+    description="בניית תנאים מורכבים לחוקי הנחה"
+    href="/he/docs/discount-rules/conditions"
+  />
+</CardGrid>
