@@ -104,6 +104,43 @@ export const Documents: LocalizedPaths[] = [
     ],
   },
   {
+    title: {
+      en: "Discount Rules",
+      he: "חוקי הנחות",
+    },
+    href: "/discount-rules",
+    items: [
+      {
+        title: {
+          en: "Creating Rules",
+          he: "יצירת חוקים",
+        },
+        href: "/creating",
+      },
+      {
+        title: {
+          en: "Rule Types",
+          he: "סוגי חוקים",
+        },
+        href: "/types",
+      },
+      {
+        title: {
+          en: "Conditions",
+          he: "תנאים",
+        },
+        href: "/conditions",
+      },
+      {
+        title: {
+          en: "Managing Rules",
+          he: "ניהול חוקים",
+        },
+        href: "/managing",
+      },
+    ],
+  },
+  {
     spacer: true,
   },
   {

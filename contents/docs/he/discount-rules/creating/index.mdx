@@ -1,0 +1,420 @@
+---
+title: יצירת חוקי הנחה
+description: "מדריך שלב אחר שלב ליצירת חוקי הנחה חדשים במערכת Whizmanage"
+keywords: ["create discount", "new rule", "יצירת הנחה", "חוק חדש"]
+---
+
+## יצירת חוק הנחה חדש
+
+יצירת חוק הנחה חדש במערכת Whizmanage היא תהליך פשוט ואינטואיטיבי. במדריך זה נעבור על כל השלבים הנדרשים ליצירת חוק הנחה מקצועי ופונקציונלי.
+
+### התחלה מהירה
+
+<Step>
+<StepItem title="פתיחת מסך יצירת חוק חדש">
+
+1. נווטו ללשונית **Discounts** בתפריט הצד
+2. לחצו על הכפתור **Add rule** בפינה הימנית העליונה
+3. בחרו **Create new rule** מהתפריט הנפתח
+
+<img src="https://placehold.co/800x300?text=Open+new+rule+screen" alt="פתיחת מסך יצירת חוק חדש" />
+
+<Note title="טיפ" type="info">
+לחלופין, תוכלו ללחוץ על **Duplicate** מול חוק קיים כדי לשכפל אותו ולערוך את הפרטים.
+</Note>
+</StepItem>
+
+<StepItem title="מבנה הטופס">
+
+הטופס מחולק לשלושה חלקים עיקריים:
+
+**צד ימין:**
+- Rule details (פרטי החוק)
+- Schedule (תזמון)
+
+**צד שמאל:**
+- Filters (סינון מוצרים)
+- Conditions (תנאי עגלה)
+
+<img src="https://placehold.co/800x300?text=Form+structure" alt="מבנה הטופס" />
+</StepItem>
+</Step>
+
+### שלב 1: פרטי החוק הבסיסיים
+
+<Step>
+<StepItem title="הגדרת שם החוק">
+
+**Rule name** - שם תיאורי שיעזור לכם לזהות את החוק:
+
+✅ **שמות טובים:**
+- "מבצע קיץ 2024 - 20% על כל האתר"
+- "BOGO על חולצות - יולי"
+- "משלוח חינם מעל 200₪"
+
+❌ **שמות לא מומלצים:**
+- "הנחה 1"
+- "test"
+- "חוק חדש"
+
+<img src="https://placehold.co/800x300?text=Rule+name" alt="שם החוק" />
+
+<Note title="טיפ" type="info">
+השתמשו בשמות שמתארים את המבצע, התאריכים והתנאים. זה יעזור לכם למצוא ולנהל חוקים בקלות.
+</Note>
+</StepItem>
+
+<StepItem title="בחירת סוג ההנחה">
+
+**Discount type** - בחרו את סוג ההנחה המתאים למבצע שלכם:
+
+| סוג | מתי להשתמש |
+|-----|-----------|
+| **Product adjustment** | הנחה אחידה על מוצרים ספציפיים |
+| **Cart adjustment** | הנחה על כל העגלה |
+| **Bulk discount** | הנחות מדורגות לפי כמות |
+| **BOGO** | קנה X קבל Y מאותו מוצר |
+| **BXGY** | קנה מוצר X קבל מוצר Y |
+| **Shipping discount** | הנחה על עלות המשלוח |
+| **Spend bundle** | מבצעי חבילה |
+
+<img src="https://placehold.co/800x300?text=Discount+type" alt="סוג ההנחה" />
+</StepItem>
+
+<StepItem title="הגדרת ההנחה עצמה">
+
+לחצו על כפתור **ההגדרות** (⚙️) ליד סוג ההנחה:
+
+**עבור Product/Cart Adjustment:**
+- **שיטת הנחה:** אחוז (%) או סכום קבוע (₪)
+- **ערך ההנחה:** הסכום או האחוז
+- **מקסימום הנחה:** (אופציונלי) הגבלת סכום ההנחה המקסימלי
+- **יצירת קופון:** האם ליצור קופון אוטומטי שמופיע בעגלה
+
+<img src="https://placehold.co/800x300?text=Discount+settings" alt="הגדרות הנחה" />
+
+<Note title="חשוב" type="warning">
+כל סוג הנחה מציג הגדרות שונות. לדוגמה, BOGO יציג שדות לכמויות X ו-Y, ו-Bulk Discount יציג טבלת מדרגות.
+</Note>
+</StepItem>
+
+<StepItem title="סטטוס ועדיפות">
+
+**Status** - מצב החוק:
+- **Active** (פעיל) - החוק פעיל ופועל
+- **Draft** (טיוטה) - החוק לא פעיל
+
+**Priority** - מספר שקובע סדר ההפעלה:
+- ערך **נמוך** = עדיפות **גבוהה**
+- ברירת מחדל: 0
+- שימושי כאשר יש מספר חוקים שיכולים לחול על אותו מוצר
+
+<img src="https://placehold.co/800x300?text=Status+and+priority" alt="סטטוס ועדיפות" />
+
+<Note title="דוגמה" type="info">
+אם יש חוק עם Priority=0 (הנחה של 20%) וחוק עם Priority=10 (הנחה של 10%), החוק עם Priority=0 יופעל ראשון.
+</Note>
+</StepItem>
+</Step>
+
+### שלב 2: תזמון החוק
+
+<Step>
+<StepItem title="הגדרת תאריכי פעילות">
+
+**Schedule (optional)** - קביעת מתי החוק יהיה פעיל:
+
+**Start date** - תאריך ושעת התחלה:
+- השאירו ריק = פעיל מיד
+- הגדירו תאריך עתידי למבצעים מתוזמנים
+
+**End date** - תאריך ושעת סיום:
+- השאירו ריק = ללא הגבלת זמן
+- הגדירו תאריך סיום למבצעים זמניים
+
+<img src="https://placehold.co/800x300?text=Schedule+dates" alt="תאריכי פעילות" />
+
+<Note title="טיפ" type="info">
+מומלץ להגדיר תאריכי סיום למבצעים מיוחדים כדי שלא יישארו פעילים בטעות אחרי תום המבצע.
+</Note>
+</StepItem>
+</Step>
+
+### שלב 3: הגדרת Filters (סינון מוצרים)
+
+Filters קובעים על **אילו מוצרים** החוק יחול.
+
+<Step>
+<StepItem title="הוספת Filter ראשון">
+
+1. בצד ימין, בקטע **Filters**, לחצו על **Add filter**
+2. בחרו את סוג הפילטר:
+   - **Categories** - קטגוריות
+   - **Tags** - תגיות
+   - **Attributes** - תכונות (צבע, גודל וכו')
+   - **Products** - מוצרים ספציפיים
+   - **On Sale** - מוצרים במבצע
+
+<img src="https://placehold.co/800x300?text=Add+filter" alt="הוספת פילטר" />
+</StepItem>
+
+<StepItem title="הגדרת Mode ו-Values">
+
+**Mode** - אופן הסינון:
+- **Include** - כלול רק את הערכים שנבחרו
+- **Exclude** - הדר את הערכים שנבחרו
+
+**Values** - בחירת הערכים:
+- התחילו להקליד לחיפוש
+- בחרו ערך אחד או יותר
+- ניתן לבחור מספר קטגוריות/תגיות/מוצרים
+
+<img src="https://placehold.co/800x300?text=Filter+mode+values" alt="Mode ו-Values" />
+
+<Note title="דוגמה" type="info">
+**תרחיש:** הנחה רק על מוצרי אלקטרוניקה
+
+- Field: **Categories**
+- Mode: **Include**
+- Values: **אלקטרוניקה, מחשבים**
+</Note>
+</StepItem>
+
+<StepItem title="שילוב מספר Filters">
+
+ניתן להוסיף מספר פילטרים שעובדים ביחד:
+
+**דוגמה מורכבת:**
+1. Categories → Include → "בגדים"
+2. Tags → Exclude → "Sale"
+3. Attributes → Include → Color: "אדום"
+
+**משמעות:** החוק יחול רק על בגדים אדומים שאינם במבצע.
+
+<img src="https://placehold.co/800x300?text=Multiple+filters" alt="מספר פילטרים" />
+</StepItem>
+</Step>
+
+### שלב 4: הגדרת Conditions (תנאי עגלה)
+
+Conditions קובעים **מתי** החוק יופעל בהתבסס על תוכן העגלה.
+
+<Step>
+<StepItem title="בחירת לוגיקת Conditions">
+
+בחרו את הלוגיקה:
+
+**Match ALL** - הלקוח חייב לעמוד בכל התנאים
+- שימושי למבצעים מורכבים עם דרישות מרובות
+
+**Match ANY** - הלקוח צריך לעמוד בתנאי אחד לפחות
+- שימושי למבצעים עם מספר אפשרויות להטבה
+
+<img src="https://placehold.co/800x300?text=Conditions+logic" alt="לוגיקת Conditions" />
+</StepItem>
+
+<StepItem title="הוספת Condition">
+
+1. לחצו על **Add Condition**
+2. בחרו את **Condition Type**:
+   - **Subtotal (cart)** - סכום כל העגלה
+   - **Category subtotal** - סכום מקטגוריה ספציפית
+   - **Products subtotal** - סכום ממוצרים ספציפיים
+   - **Line Item Count** - כמות פריטים שונים
+
+<img src="https://placehold.co/800x300?text=Add+condition" alt="הוספת תנאי" />
+</StepItem>
+
+<StepItem title="הגדרת אופרטור השוואה">
+
+**Compare** - בחרו את אופן ההשוואה:
+
+| סמל | משמעות | דוגמה |
+|-----|--------|-------|
+| ↑= | גדול או שווה | ≥ 200 |
+| ↓= | קטן או שווה | ≤ 500 |
+| ↑ | גדול מ | > 100 |
+| ↓ | קטן מ | < 1000 |
+| = | שווה ל | = 50 |
+| =X | לא שווה ל | ≠ 0 |
+
+<img src="https://placehold.co/800x300?text=Compare+operator" alt="אופרטור השוואה" />
+</StepItem>
+
+<StepItem title="בחירת Values (אם נדרש)">
+
+עבור **Category subtotal** או **Products subtotal**:
+- בחרו את הקטגוריות או המוצרים הרלוונטיים
+- ניתן לבחור מספר קטגוריות/מוצרים
+
+**Amount** - הסכום או הכמות:
+- עבור Subtotal: הסכום בשקלים
+- עבור Item Count: מספר הפריטים
+
+<img src="https://placehold.co/800x300?text=Condition+values" alt="ערכי Condition" />
+
+<Note title="דוגמה מעשית" type="info">
+**מבצע:** משלוח חינם מעל 200₪ עבור קניית נעליים
+
+**Condition:**
+- Type: **Category subtotal**
+- Compare: **↑=** (גדול או שווה)
+- Values: **נעליים**
+- Amount: **200**
+</Note>
+</StepItem>
+</Step>
+
+### שלב 5: הוספת הודעה ללקוח (אופציונלי)
+
+<Step>
+<StepItem title="הגדרת Message">
+
+**Message** - טקסט שיוצג ללקוח בעגלה:
+- הסבר על ההנחה
+- עידוד להשלמת הקנייה
+- פרטים על המבצע
+
+**דוגמאות:**
+- "קיבלת 20% הנחה על כל המוצרים! 🎉"
+- "משלוח חינם בזכות הקנייה שלך מעל 200₪"
+- "מבצע מיוחד: קנה 2 קבל 1 במתנה"
+
+<img src="https://placehold.co/800x300?text=Customer+message" alt="הודעה ללקוח" />
+</StepItem>
+</Step>
+
+### שלב 6: שמירה ובדיקה
+
+<Step>
+<StepItem title="שמירת החוק">
+
+1. לחצו על **Save** בפינה השמאלית התחתונה
+2. המערכת תבדוק תקינות ושדות חובה
+3. אם הכל תקין, החוק יישמר ויופיע בטבלה
+
+<img src="https://placehold.co/800x300?text=Save+rule" alt="שמירת החוק" />
+
+<Note title="שגיאות נפוצות" type="warning">
+- **"Rule name is required"** - חובה להזין שם לחוק
+- **"Please select values"** - חובה לבחור ערכים ב-Filters/Conditions שדורשים בחירה
+- **"End date must be after start date"** - תאריך הסיום חייב להיות אחרי תאריך ההתחלה
+</Note>
+</StepItem>
+
+<StepItem title="בדיקת החוק">
+
+אחרי שמירת החוק, מומלץ לבדוק:
+
+✅ **בדיקה בסיסית:**
+1. הוסיפו מוצר רלוונטי לעגלה
+2. ודאו שההנחה מופיעה
+3. בדקו את ההודעה ללקוח
+
+✅ **בדיקת תנאים:**
+1. הוסיפו מוצרים עד להגעה לסכום המינימלי
+2. ודאו שההנחה מופעלת רק כשהתנאים מתקיימים
+3. בדקו מצבים שונים (מתחת/מעל הסף)
+
+✅ **בדיקת Filters:**
+1. הוסיפו מוצרים שכלולים ב-Filters
+2. הוסיפו מוצרים שאינם כלולים
+3. ודאו שההנחה חלה רק על המוצרים הנכונים
+
+<img src="https://placehold.co/800x300?text=Test+rule" alt="בדיקת החוק" />
+</StepItem>
+</Step>
+
+### דוגמאות מלאות
+
+<Step>
+<StepItem title="דוגמה 1: הנחה פשוטה על קטגוריה">
+
+**מטרה:** 15% הנחה על כל מוצרי האלקטרוניקה
+
+**הגדרות:**
+- **Name:** "הנחת אלקטרוניקה 15%"
+- **Type:** Product adjustment
+- **Settings:** 15% discount
+- **Status:** Active
+- **Priority:** 0
+
+**Filters:**
+- Categories → Include → "אלקטרוניקה"
+
+**Conditions:** (ללא)
+
+<img src="https://placehold.co/800x300?text=Example+1" alt="דוגמה 1" />
+</StepItem>
+
+<StepItem title="דוגמה 2: משלוח חינם מעל סכום">
+
+**מטרה:** משלוח חינם מעל 300₪
+
+**הגדרות:**
+- **Name:** "משלוח חינם מעל 300₪"
+- **Type:** Shipping discount
+- **Settings:** 100% discount on shipping
+- **Status:** Active
+
+**Filters:** (ללא)
+
+**Conditions:**
+- Type: Subtotal (cart)
+- Compare: ≥
+- Amount: 300
+
+<img src="https://placehold.co/800x300?text=Example+2" alt="דוגמה 2" />
+</StepItem>
+
+<StepItem title="דוגמה 3: BOGO על חולצות">
+
+**מטרה:** קנה 2 חולצות קבל 1 במתנה
+
+**הגדרות:**
+- **Name:** "BOGO חולצות"
+- **Type:** BOGO
+- **Settings:** Buy 2, Get 1 free (100%)
+- **Status:** Active
+
+**Filters:**
+- Categories → Include → "חולצות"
+
+**Conditions:** (ללא)
+
+<img src="https://placehold.co/800x300?text=Example+3" alt="דוגמה 3" />
+</StepItem>
+</Step>
+
+### טיפים מומלצים
+
+<Note title="עבודה יעילה" type="info">
+1. **התחילו פשוט** - צרו חוק פשוט ובדקו אותו לפני הוספת תנאים מורכבים
+2. **השתמשו בשמות תיאוריים** - זה יעזור לכם למצוא ולנהל חוקים
+3. **הגדירו תאריכי סיום** - למנוע מבצעים פעילים בטעות
+4. **בדקו בסביבת בדיקה** - לפני הפעלה בחנות אמיתית
+5. **תעדו** - רשמו מה כל חוק אמור לעשות
+</Note>
+
+### המשך לקריאה
+
+<CardGrid>
+  <Card
+    subtitle="סוגי הנחות"
+    title="Rule Types"
+    description="הכירו את כל סוגי ההנחות והגדרותיהם המיוחדות"
+    href="/he/docs/discount-rules/types"
+  />
+  <Card
+    subtitle="תנאים מתקדמים"
+    title="Conditions"
+    description="למדו כיצד לבנות תנאים מורכבים ומתקדמים"
+    href="/he/docs/discount-rules/conditions"
+  />
+  <Card
+    subtitle="ניהול יומיומי"
+    title="Managing Rules"
+    description="טיפים לניהול וארגון חוקי הנחות ביעילות"
+    href="/he/docs/discount-rules/managing"
+  />
+</CardGrid>

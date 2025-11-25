@@ -1,0 +1,420 @@
+---
+title: Creating Discount Rules
+description: "Step-by-step guide to creating new discount rules in Whizmanage system"
+keywords: ["create discount", "new rule", "discount setup", "rule creation"]
+---
+
+## Creating a New Discount Rule
+
+Creating a new discount rule in the Whizmanage system is a simple and intuitive process. In this guide, we'll go through all the steps required to create a professional and functional discount rule.
+
+### Quick Start
+
+<Step>
+<StepItem title="Opening the New Rule Screen">
+
+1. Navigate to the **Discounts** tab in the side menu
+2. Click the **Add rule** button in the top right corner
+3. Select **Create new rule** from the dropdown menu
+
+<img src="https://placehold.co/800x300?text=Open+new+rule+screen" alt="Opening new rule screen" />
+
+<Note title="Tip" type="info">
+Alternatively, you can click **Duplicate** next to an existing rule to copy it and edit the details.
+</Note>
+</StepItem>
+
+<StepItem title="Form Structure">
+
+The form is divided into three main sections:
+
+**Left side:**
+- Rule details
+- Schedule
+
+**Right side:**
+- Filters (product filtering)
+- Conditions (cart conditions)
+
+<img src="https://placehold.co/800x300?text=Form+structure" alt="Form structure" />
+</StepItem>
+</Step>
+
+### Step 1: Basic Rule Details
+
+<Step>
+<StepItem title="Setting the Rule Name">
+
+**Rule name** - A descriptive name to help you identify the rule:
+
+✅ **Good names:**
+- "Summer Sale 2024 - 20% Sitewide"
+- "BOGO on Shirts - July"
+- "Free Shipping Over $200"
+
+❌ **Not recommended:**
+- "Discount 1"
+- "test"
+- "New rule"
+
+<img src="https://placehold.co/800x300?text=Rule+name" alt="Rule name" />
+
+<Note title="Tip" type="info">
+Use names that describe the promotion, dates, and conditions. This will help you find and manage rules easily.
+</Note>
+</StepItem>
+
+<StepItem title="Selecting Discount Type">
+
+**Discount type** - Choose the appropriate discount type for your promotion:
+
+| Type | When to Use |
+|------|-------------|
+| **Product adjustment** | Uniform discount on specific products |
+| **Cart adjustment** | Discount on entire cart |
+| **Bulk discount** | Tiered discounts by quantity |
+| **BOGO** | Buy X Get Y same product |
+| **BXGY** | Buy product X Get product Y |
+| **Shipping discount** | Discount on shipping cost |
+| **Spend bundle** | Bundle deals |
+
+<img src="https://placehold.co/800x300?text=Discount+type" alt="Discount type" />
+</StepItem>
+
+<StepItem title="Configuring the Discount">
+
+Click the **settings button** (⚙️) next to the discount type:
+
+**For Product/Cart Adjustment:**
+- **Discount method:** Percentage (%) or fixed amount ($)
+- **Discount value:** The amount or percentage
+- **Maximum discount:** (Optional) Limit maximum discount amount
+- **Create coupon:** Whether to create an automatic coupon displayed in cart
+
+<img src="https://placehold.co/800x300?text=Discount+settings" alt="Discount settings" />
+
+<Note title="Important" type="warning">
+Each discount type displays different settings. For example, BOGO shows X and Y quantity fields, and Bulk Discount shows a tier table.
+</Note>
+</StepItem>
+
+<StepItem title="Status and Priority">
+
+**Status** - Rule state:
+- **Active** - Rule is active and running
+- **Draft** - Rule is not active
+
+**Priority** - Number determining execution order:
+- **Lower** value = **Higher** priority
+- Default: 0
+- Useful when multiple rules can apply to the same product
+
+<img src="https://placehold.co/800x300?text=Status+and+priority" alt="Status and priority" />
+
+<Note title="Example" type="info">
+If there's a rule with Priority=0 (20% discount) and a rule with Priority=10 (10% discount), the Priority=0 rule will execute first.
+</Note>
+</StepItem>
+</Step>
+
+### Step 2: Rule Scheduling
+
+<Step>
+<StepItem title="Setting Active Dates">
+
+**Schedule (optional)** - Determine when the rule will be active:
+
+**Start date** - Start date and time:
+- Leave empty = active immediately
+- Set future date for scheduled promotions
+
+**End date** - End date and time:
+- Leave empty = no time limit
+- Set end date for temporary promotions
+
+<img src="https://placehold.co/800x300?text=Schedule+dates" alt="Schedule dates" />
+
+<Note title="Tip" type="info">
+It's recommended to set end dates for special promotions to prevent them from staying active by mistake.
+</Note>
+</StepItem>
+</Step>
+
+### Step 3: Setting Filters (Product Filtering)
+
+Filters determine **which products** the rule applies to.
+
+<Step>
+<StepItem title="Adding First Filter">
+
+1. On the right side, in the **Filters** section, click **Add filter**
+2. Select the filter type:
+   - **Categories** - Product categories
+   - **Tags** - Product tags
+   - **Attributes** - Attributes (color, size, etc.)
+   - **Products** - Specific products
+   - **On Sale** - Products on sale
+
+<img src="https://placehold.co/800x300?text=Add+filter" alt="Add filter" />
+</StepItem>
+
+<StepItem title="Setting Mode and Values">
+
+**Mode** - Filtering method:
+- **Include** - Include only selected values
+- **Exclude** - Exclude selected values
+
+**Values** - Select values:
+- Start typing to search
+- Select one or more values
+- Can select multiple categories/tags/products
+
+<img src="https://placehold.co/800x300?text=Filter+mode+values" alt="Mode and Values" />
+
+<Note title="Example" type="info">
+**Scenario:** Discount only on electronics
+
+- Field: **Categories**
+- Mode: **Include**
+- Values: **Electronics, Computers**
+</Note>
+</StepItem>
+
+<StepItem title="Combining Multiple Filters">
+
+You can add multiple filters that work together:
+
+**Complex example:**
+1. Categories → Include → "Clothing"
+2. Tags → Exclude → "Sale"
+3. Attributes → Include → Color: "Red"
+
+**Meaning:** Rule applies only to red clothing not on sale.
+
+<img src="https://placehold.co/800x300?text=Multiple+filters" alt="Multiple filters" />
+</StepItem>
+</Step>
+
+### Step 4: Setting Conditions (Cart Conditions)
+
+Conditions determine **when** the rule activates based on cart contents.
+
+<Step>
+<StepItem title="Choosing Conditions Logic">
+
+Select the logic:
+
+**Match ALL** - Customer must meet all conditions
+- Useful for complex promotions with multiple requirements
+
+**Match ANY** - Customer needs to meet at least one condition
+- Useful for promotions with multiple benefit options
+
+<img src="https://placehold.co/800x300?text=Conditions+logic" alt="Conditions logic" />
+</StepItem>
+
+<StepItem title="Adding a Condition">
+
+1. Click **Add Condition**
+2. Select **Condition Type**:
+   - **Subtotal (cart)** - Total cart amount
+   - **Category subtotal** - Amount from specific category
+   - **Products subtotal** - Amount from specific products
+   - **Line Item Count** - Number of different items
+
+<img src="https://placehold.co/800x300?text=Add+condition" alt="Add condition" />
+</StepItem>
+
+<StepItem title="Setting Comparison Operator">
+
+**Compare** - Choose the comparison method:
+
+| Symbol | Meaning | Example |
+|--------|---------|---------|
+| ↑= | Greater or equal | ≥ 200 |
+| ↓= | Less or equal | ≤ 500 |
+| ↑ | Greater than | > 100 |
+| ↓ | Less than | < 1000 |
+| = | Equal to | = 50 |
+| =X | Not equal to | ≠ 0 |
+
+<img src="https://placehold.co/800x300?text=Compare+operator" alt="Compare operator" />
+</StepItem>
+
+<StepItem title="Selecting Values (if required)">
+
+For **Category subtotal** or **Products subtotal**:
+- Select relevant categories or products
+- Can select multiple categories/products
+
+**Amount** - The amount or quantity:
+- For Subtotal: Amount in currency
+- For Item Count: Number of items
+
+<img src="https://placehold.co/800x300?text=Condition+values" alt="Condition values" />
+
+<Note title="Practical Example" type="info">
+**Promotion:** Free shipping over $200 for shoe purchases
+
+**Condition:**
+- Type: **Category subtotal**
+- Compare: **↑=** (greater or equal)
+- Values: **Shoes**
+- Amount: **200**
+</Note>
+</StepItem>
+</Step>
+
+### Step 5: Adding Customer Message (Optional)
+
+<Step>
+<StepItem title="Setting Message">
+
+**Message** - Text displayed to customer in cart:
+- Explain the discount
+- Encourage purchase completion
+- Promotion details
+
+**Examples:**
+- "You got 20% off all products! 🎉"
+- "Free shipping thanks to your purchase over $200"
+- "Special offer: Buy 2 Get 1 Free"
+
+<img src="https://placehold.co/800x300?text=Customer+message" alt="Customer message" />
+</StepItem>
+</Step>
+
+### Step 6: Saving and Testing
+
+<Step>
+<StepItem title="Saving the Rule">
+
+1. Click **Save** in the bottom left corner
+2. System will validate and check required fields
+3. If everything is correct, rule will be saved and appear in table
+
+<img src="https://placehold.co/800x300?text=Save+rule" alt="Save rule" />
+
+<Note title="Common Errors" type="warning">
+- **"Rule name is required"** - Must enter rule name
+- **"Please select values"** - Must select values in Filters/Conditions that require selection
+- **"End date must be after start date"** - End date must be after start date
+</Note>
+</StepItem>
+
+<StepItem title="Testing the Rule">
+
+After saving the rule, it's recommended to test:
+
+✅ **Basic test:**
+1. Add relevant product to cart
+2. Verify discount appears
+3. Check customer message
+
+✅ **Testing conditions:**
+1. Add products until reaching minimum amount
+2. Verify discount activates only when conditions are met
+3. Test different scenarios (below/above threshold)
+
+✅ **Testing filters:**
+1. Add products included in Filters
+2. Add products not included
+3. Verify discount applies only to correct products
+
+<img src="https://placehold.co/800x300?text=Test+rule" alt="Test rule" />
+</StepItem>
+</Step>
+
+### Complete Examples
+
+<Step>
+<StepItem title="Example 1: Simple Category Discount">
+
+**Goal:** 15% discount on all electronics
+
+**Settings:**
+- **Name:** "Electronics 15% Discount"
+- **Type:** Product adjustment
+- **Settings:** 15% discount
+- **Status:** Active
+- **Priority:** 0
+
+**Filters:**
+- Categories → Include → "Electronics"
+
+**Conditions:** (none)
+
+<img src="https://placehold.co/800x300?text=Example+1" alt="Example 1" />
+</StepItem>
+
+<StepItem title="Example 2: Free Shipping Over Amount">
+
+**Goal:** Free shipping over $300
+
+**Settings:**
+- **Name:** "Free Shipping Over $300"
+- **Type:** Shipping discount
+- **Settings:** 100% discount on shipping
+- **Status:** Active
+
+**Filters:** (none)
+
+**Conditions:**
+- Type: Subtotal (cart)
+- Compare: ≥
+- Amount: 300
+
+<img src="https://placehold.co/800x300?text=Example+2" alt="Example 2" />
+</StepItem>
+
+<StepItem title="Example 3: BOGO on Shirts">
+
+**Goal:** Buy 2 shirts get 1 free
+
+**Settings:**
+- **Name:** "BOGO Shirts"
+- **Type:** BOGO
+- **Settings:** Buy 2, Get 1 free (100%)
+- **Status:** Active
+
+**Filters:**
+- Categories → Include → "Shirts"
+
+**Conditions:** (none)
+
+<img src="https://placehold.co/800x300?text=Example+3" alt="Example 3" />
+</StepItem>
+</Step>
+
+### Recommended Tips
+
+<Note title="Efficient Work" type="info">
+1. **Start simple** - Create a simple rule and test it before adding complex conditions
+2. **Use descriptive names** - This will help you find and manage rules
+3. **Set end dates** - Prevent promotions from staying active by mistake
+4. **Test in staging** - Before activating in live store
+5. **Document** - Note what each rule should do
+</Note>
+
+### Continue Reading
+
+<CardGrid>
+  <Card
+    subtitle="Discount Types"
+    title="Rule Types"
+    description="Learn about all discount types and their special settings"
+    href="/docs/discount-rules/types"
+  />
+  <Card
+    subtitle="Advanced Conditions"
+    title="Conditions"
+    description="Learn how to build complex and advanced conditions"
+    href="/docs/discount-rules/conditions"
+  />
+  <Card
+    subtitle="Daily Management"
+    title="Managing Rules"
+    description="Tips for efficiently managing and organizing discount rules"
+    href="/docs/discount-rules/managing"
+  />
+</CardGrid>

@@ -1,0 +1,218 @@
+---
+title: Discount Rules
+description: "Powerful and flexible system for managing advanced discounts in your WooCommerce store"
+keywords: ["discount rules", "discounts", "promotions", "coupons", "sales"]
+---
+
+## Discount Rules - Advanced Promotions Management
+
+Whizmanage's Discount Rules system allows you to create and manage complex, advanced discount promotions with ease. With an intuitive interface and powerful tools, you can define custom discounts that perfectly match your sales strategy.
+
+### What are Discount Rules?
+
+Discount rules are automatic rules that apply discounts to products or shopping carts based on conditions you define. Unlike regular coupons, discount rules work automatically without requiring a code entry.
+
+<Step>
+<StepItem title="Create Complex Campaigns">
+
+With discount rules you can create:
+- Tiered discounts based on purchase quantity
+- BOGO (Buy X Get Y) promotions
+- Discounts on specific categories
+- Discounts conditional on cart value
+- Free shipping under conditions
+
+<img src="https://placehold.co/800x300?text=Create+complex+campaigns" alt="Create complex campaigns" />
+</StepItem>
+
+<StepItem title="Convenient and Focused Management">
+
+The advanced table interface allows:
+- Quick editing of rules directly in the table
+- Easy filtering and searching of rules
+- Bulk editing of multiple rules
+- Duplicating existing rules
+- Tracking status and schedules
+
+<img src="https://placehold.co/800x300?text=Convenient+management" alt="Convenient management" />
+</StepItem>
+
+<StepItem title="Full Control">
+
+Precise control over discounts:
+- Start and end dates
+- Priority between rules
+- Custom conditions
+- Limiting to specific products
+- Combining cart and product conditions
+
+<img src="https://placehold.co/800x300?text=Full+control" alt="Full control" />
+</StepItem>
+</Step>
+
+### Discount Rule Types
+
+The system supports a wide variety of discount types:
+
+1. **Product Adjustment** - Discount on specific products
+2. **Cart Adjustment** - Discount on entire cart
+3. **Bulk Discount** - Tiered discounts by quantity
+4. **BOGO** - Buy X Get Y (same product)
+5. **BXGY** - Buy X Get Y (different products)
+6. **Shipping Discount** - Discount on shipping
+7. **Spend Bundle** - Bundle deals
+
+<Note title="Tip" type="info">
+Each discount type comes with its own dedicated settings. For example, BOGO allows you to set different quantities and products for purchase and gift.
+</Note>
+
+### Basic Rule Components
+
+Every discount rule consists of several main components:
+
+<Step>
+<StepItem title="Basic Details">
+
+**Rule Name** - A descriptive name that helps you identify the rule
+
+**Discount Type** - Select the appropriate discount type (Product, Cart, BOGO, etc.)
+
+**Discount Settings** - The settings button allows you to configure the discount method, percentages, fixed amounts, and more
+
+<img src="https://placehold.co/800x300?text=Basic+details" alt="Basic details" />
+</StepItem>
+
+<StepItem title="Filters - Product Filtering">
+
+Filters allow you to limit the rule to specific products:
+- **Categories** - Include or exclude categories
+- **Tags** - Filter by product tags
+- **Attributes** - Filter by attributes like color, size
+- **Specific Products** - Manual product selection
+- **On Sale** - Only sale products or vice versa
+
+<img src="https://placehold.co/800x300?text=Product+filters" alt="Product filters" />
+
+<Note title="Important" type="warning">
+Filters determine **which products** the rule applies to. If no Filters are set, the rule applies to all products.
+</Note>
+</StepItem>
+
+<StepItem title="Conditions - Cart Conditions">
+
+Conditions determine **when** the rule will activate based on cart contents:
+- **Subtotal** - Minimum cart amount
+- **Category Subtotal** - Amount from specific category
+- **Products Subtotal** - Amount from specific products
+- **Item Count** - Number of items in cart
+
+Each condition includes:
+- **Condition Type** - Cart, category, products
+- **Comparison Operator** - Greater than, less than, equal
+- **Value** - The required amount or quantity
+
+<img src="https://placehold.co/800x300?text=Cart+conditions" alt="Cart conditions" />
+
+<Note title="Tip" type="info">
+You can set multiple conditions and choose whether the customer needs to meet all conditions (Match ALL) or at least one (Match ANY).
+</Note>
+</StepItem>
+
+<StepItem title="Schedule and Priority">
+
+**Dates** - Set the rule's active period:
+- Start date
+- End date
+- Leave empty = no time limit
+
+**Priority** - Number that determines rule application order when multiple rules are relevant. Lower value = higher priority.
+
+**Status** - Quick enable/disable of the rule:
+- 🟢 Active
+- ⚫ Draft
+
+<img src="https://placehold.co/800x300?text=Schedule+and+priority" alt="Schedule and priority" />
+</StepItem>
+</Step>
+
+### Difference Between Filters and Conditions
+
+This is one of the important things to understand:
+
+| Aspect | Filters | Conditions |
+|--------|---------|------------|
+| **Purpose** | Determine **which products** the rule applies to | Determine **when** the rule activates |
+| **Based On** | Product attributes (category, tag, SKU) | Cart contents (amount, quantity) |
+| **Example** | "Only products from clothing category" | "When cart total exceeds $100" |
+| **Default** | All products | All carts |
+
+<Note title="Practical Example" type="info">
+**Scenario:** 20% discount on clothing when purchasing over $200
+
+- **Filters:** Category = "Clothing" (only clothing gets discount)
+- **Conditions:** Subtotal ≥ 200 (rule only activates if cart exceeds $200)
+</Note>
+
+### Advanced Features
+
+<Step>
+<StepItem title="Bulk Edit">
+
+Edit multiple rules at once:
+- Change dates for all rules
+- Update priorities
+- Change status
+- Update discount settings
+
+<img src="https://placehold.co/800x300?text=Bulk+edit" alt="Bulk edit" />
+</StepItem>
+
+<StepItem title="Duplicate Rules">
+
+Create new versions of existing rules quickly:
+- Duplicate rule with one click
+- Edit unique details
+- Save time configuring similar rules
+
+<img src="https://placehold.co/800x300?text=Duplicate+rules" alt="Duplicate rules" />
+</StepItem>
+
+<StepItem title="Undo/Redo">
+
+The system maintains change history:
+- Undo recent changes
+- Redo undone changes
+- Safer workflow
+
+<img src="https://placehold.co/800x300?text=Undo+redo" alt="Undo redo" />
+</StepItem>
+</Step>
+
+### Continue Reading
+
+<CardGrid>
+  <Card
+    subtitle="Creating Rules"
+    title="Creating Rules"
+    description="Step-by-step guide to creating a new discount rule"
+    href="/docs/discount-rules/creating"
+  />
+  <Card
+    subtitle="Discount Types"
+    title="Rule Types"
+    description="Learn about all available discount types and when to use each"
+    href="/docs/discount-rules/types"
+  />
+  <Card
+    subtitle="Setting Conditions"
+    title="Conditions"
+    description="Learn how to set complex cart conditions"
+    href="/docs/discount-rules/conditions"
+  />
+  <Card
+    subtitle="Management and Organization"
+    title="Managing Rules"
+    description="Tips and techniques for efficiently managing discount rules"
+    href="/docs/discount-rules/managing"
+  />
+</CardGrid>

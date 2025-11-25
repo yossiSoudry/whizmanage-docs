@@ -25,17 +25,7 @@ export const Documents = [
                 },
                 href: "/setup",
             },
-            // {
-            //   title: {
-            //     en: "Changelog",
-            //     he: "היסטוריית שינויים"
-            //   },
-            //   href: "/changelog",
-            // },
         ],
-    },
-    {
-        spacer: true,
     },
     {
         title: {
@@ -44,24 +34,10 @@ export const Documents = [
         },
         href: "/import",
         heading: {
-            en: "Documents",
-            he: "מסמכים",
+            en: "Features",
+            he: "פיצ'רים",
         },
         items: [
-            // {
-            //   title: {
-            //     en: "Overview",
-            //     he: "סקירה כללית"
-            //   },
-            //   href: "/",
-            // },
-            // {
-            //   title: {
-            //     en: "Import Process",
-            //     he: "תהליך הייבוא"
-            //   },
-            //   href: "/process",
-            // },
             {
                 title: {
                     en: "Google Sheets Import",
@@ -69,27 +45,6 @@ export const Documents = [
                 },
                 href: "/spreadsheet",
             },
-            // {
-            //   title: {
-            //     en: "WooCommerce Import",
-            //     he: "ייבוא מקבצי WooCommerce"
-            //   },
-            //   href: "/woocommerce",
-            // },
-            // {
-            //   title: {
-            //     en: "WhizManage Import",
-            //     he: "ייבוא מקבצי WhizManage"
-            //   },
-            //   href: "/whizmanage",
-            // },
-            // {
-            //   title: {
-            //     en: "Review Mode",
-            //     he: "מצב סקירה ועריכה"
-            //   },
-            //   href: "/review",
-            // },
         ],
     },
     {
@@ -128,43 +83,6 @@ export const Documents = [
                 href: "/management",
             },
         ],
-    },
-    // {
-    //   title: {
-    //     en: "Structure",
-    //     he: "מבנה"
-    //   },
-    //   href: "/structure",
-    //   items: [
-    //     {
-    //       title: {
-    //         en: "Deep",
-    //         he: "עמוק"
-    //       },
-    //       href: "/deep",
-    //       items: [
-    //         {
-    //           title: {
-    //             en: "Deeper",
-    //             he: "עמוק יותר"
-    //           },
-    //           href: "/deeper",
-    //           items: [
-    //             {
-    //               title: {
-    //                 en: "Even deeper",
-    //                 he: "עמוק מאוד"
-    //               },
-    //               href: "/even-deeper",
-    //             },
-    //           ],
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
-    {
-        spacer: true,
     },
     {
         spacer: true,
@@ -252,82 +170,6 @@ export const Documents = [
             },
         ],
     },
-    // {
-    //   title: {
-    //     en: "Markdown",
-    //     he: "מארקדאון"
-    //   },
-    //   href: "/markdown",
-    //   heading: {
-    //     en: "Components",
-    //     he: "רכיבים"
-    //   },
-    //   items: [
-    //     {
-    //       title: {
-    //         en: "Cards",
-    //         he: "כרטיסים"
-    //       },
-    //       href: "/cards",
-    //     },
-    //     {
-    //       title: {
-    //         en: "Diagrams",
-    //         he: "תרשימים"
-    //       },
-    //       href: "/diagrams",
-    //     },
-    //     {
-    //       title: {
-    //         en: "Filetree",
-    //         he: "עץ קבצים"
-    //       },
-    //       href: "/filetree",
-    //     },
-    //     {
-    //       title: {
-    //         en: "Lists",
-    //         he: "רשימות"
-    //       },
-    //       href: "/lists",
-    //     },
-    //     {
-    //       title: {
-    //         en: "Maths",
-    //         he: "מתמטיקה"
-    //       },
-    //       href: "/maths",
-    //     },
-    //     {
-    //       title: {
-    //         en: "Notes",
-    //         he: "הערות"
-    //       },
-    //       href: "/notes",
-    //     },
-    //     {
-    //       title: {
-    //         en: "Steps",
-    //         he: "שלבים"
-    //       },
-    //       href: "/steps",
-    //     },
-    //     {
-    //       title: {
-    //         en: "Table",
-    //         he: "טבלה"
-    //       },
-    //       href: "/table",
-    //     },
-    //     {
-    //       title: {
-    //         en: "Tabs",
-    //         he: "לשוניות"
-    //       },
-    //       href: "/tabs",
-    //     },
-    //   ],
-    // },
 ];
 export function getLocalizedContent(content, lang) {
     if (!content)
