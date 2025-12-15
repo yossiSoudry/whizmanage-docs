@@ -13,13 +13,14 @@ import { SupportedLanguage } from "../../layout"
 
 type PageProps = {
   params: Promise<{
-    lang: SupportedLanguage
+    lang: string
     slug?: string[]
   }>
 }
 
 export default async function Pages({ params }: PageProps) {
-  const { lang, slug = [] } = await params
+  const { lang: langParam, slug = [] } = await params
+  const lang = langParam as SupportedLanguage
   const pathName = slug.join("/")
   const res = await getDocument(pathName, lang)
 
@@ -56,7 +57,8 @@ export default async function Pages({ params }: PageProps) {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { lang, slug = [] } = await params
+  const { lang: langParam, slug = [] } = await params
+  const lang = langParam as SupportedLanguage
   const pathName = slug.join("/")
   const res = await getDocument(pathName, lang)
 

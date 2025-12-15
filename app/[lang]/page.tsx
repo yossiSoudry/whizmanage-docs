@@ -8,9 +8,10 @@ import { SupportedLanguage } from "./layout"
 export default async function Home({
   params,
 }: {
-  params: Promise<{ lang: SupportedLanguage }>
+  params: Promise<{ lang: string }>
 }) {
-  const { lang } = await params
+  const { lang: langParam } = await params
+  const lang = langParam as SupportedLanguage
   return (
     <div className="min-h-[86.5vh] flex flex-col justify-center items-center text-center px-2 py-8 rtl:font-heebo">
       {/* Main Heading */}

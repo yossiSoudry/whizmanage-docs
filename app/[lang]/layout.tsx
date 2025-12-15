@@ -8,9 +8,10 @@ export default async function LangLayout({
   params,
 }: {
   children: React.ReactNode
-  params: Promise<{ lang: SupportedLanguage  }>
+  params: Promise<{ lang: string }>
 }) {
-  const { lang } = await params
+  const { lang: langParam } = await params
+  const lang = langParam as SupportedLanguage
   
   // הגדרת כיוון לפי השפה
   const direction = lang === 'he' ? 'rtl' : 'ltr'

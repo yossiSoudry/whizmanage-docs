@@ -7,9 +7,10 @@ export default async function Documents({
   params,
 }: {
   children: React.ReactNode
-  params: Promise<{ lang: SupportedLanguage }>
+  params: Promise<{ lang: string }>
 }) {
-  const { lang } = await params
+  const { lang: langParam } = await params
+  const lang = langParam as SupportedLanguage
 
   return (
     <div className="flex items-start gap-14">

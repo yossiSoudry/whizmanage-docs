@@ -3,7 +3,10 @@
     "allow": [
       "Bash(find:*)",
       "Bash(sort:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(npm install next@latest)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []
